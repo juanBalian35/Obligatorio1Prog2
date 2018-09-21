@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class Sistema {
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
-    private Scanner scanner = new Scanner(System.in);
-
-
 
     public void registrarJugador(Jugador jugador){
         jugadores.add(jugador);

@@ -1,7 +1,6 @@
 package com.company;
 
 public class Jugador {
-
     private String alias;
     private String nombre;
     private int edad;

@@ -2,11 +2,11 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
-    private Scanner scanner = new Scanner(System.in);
-
-    public void menu(){
+public class Prueba {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Sistema sistema = new Sistema();
+
         boolean salir = false;
 
         while(!salir){
@@ -55,11 +55,5 @@ public class Main {
                     salir = true;
             }
         }
-
-    }
-
-    public static void main(String[] args) {
-        Sistema sistema = new Sistema();
-
     }
 }
