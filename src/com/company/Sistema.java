@@ -9,9 +9,10 @@ public class Sistema {
     private Scanner scanner = new Scanner(System.in);
 
     public void empezar(){
-        String opcion = "";
 
-        while(!opcion.equals("0")){
+        boolean salir = false;
+
+        while(!salir){
             System.out.println("1 - Registrar jugador");
             System.out.println("2 - Jugar partida");
             System.out.println("3 - Replicar partida");
@@ -19,22 +20,39 @@ public class Sistema {
             System.out.println("0 - Salir");
             System.out.print("Elecccion: ");
 
-            opcion = scanner.next();
+            String op = scanner.nextLine();
 
-            if(opcion.equals("1"))
-                registrar();
-            else if(opcion.equals("2"))
-                jugar();
-            else if(opcion.equals("3"))
-                replicar();
-            else if(opcion.equals("4"))
-                ranking();
+            switch(op){
+                case "1":
+
+                    System.out.println("Ingrese nombre:");
+                    String nombre = scanner.nextLine();
+                    System.out.println("Ingrese alias:");
+                    String alias = scanner.nextLine();
+                    System.out.println("Ingrese edad:");
+                    int edad = scanner.nextInt();
+
+                    registrar(nombre,alias,edad);
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+                    break;
+
+
+            }
         }
 
     }
 
-    private void registrar(){
-        System.out.println("Registrar");
+    private void registrar(String nombre, String alias, int edad){
+        Jugador nuevoJugador = new Jugador(nombre, alias, edad);
+        jugadores.add(nuevoJugador);
     }
 
     private void jugar(){
