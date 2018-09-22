@@ -1,10 +1,17 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Sistema {
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
 
     public void registrarJugador(Jugador jugador){
         jugadores.add(jugador);
