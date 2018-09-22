@@ -111,11 +111,22 @@ public class Prueba {
                         if (sistema.buscarJugador(aliasJugador) == null) {
                             System.out.println("No existe un jugador con ese alias, intente de nuevo");
                         }
-                    } while (sistema.buscarJugador(aliasJugador) == null);
+                        if(aliasJugador.equals(j1.getAlias())){
+                            System.out.println("El segundo jugador no puede ser igual al primero");
+                        }
+                    } while ((sistema.buscarJugador(aliasJugador) == null)||(aliasJugador.equals(j1.getAlias())));
 
                     Jugador j2 = sistema.buscarJugador(aliasJugador);
 
-                    sistema.jugar(j1, j2);
+                        System.out.println("Seleccione la forma de terminar la partida:");
+                        System.out.println("1 - Alcanzar una cantidad maxima de movimientos");
+                        System.out.println("2 - Alcanzar con UNA ficha el lado opuesto del tablero");
+                        System.out.println("3 - Alcanzar con TODAS las fichas el lado opuesto del tablero");
+
+                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
+
+                    sistema.jugar(j1, j2, opcion);
+
                     break;
                 case "3":
                     sistema.replicar();

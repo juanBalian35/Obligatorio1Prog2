@@ -1,15 +1,27 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Partida {
     private Tablero tablero = new Tablero();
     private Jugador jugador1, jugador2;
+    private int formaDeTerminar;
+    private ArrayList<String> movimientos = new ArrayList<>();
 
-    Partida(Jugador j1, Jugador j2){
+
+    public ArrayList<String> getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(ArrayList<String> movimientos) {
+        this.movimientos = movimientos;
+    }
+
+    Partida(Jugador j1, Jugador j2, int forma){
         jugador1 = j1;
         jugador2 = j2;
-
+        formaDeTerminar = forma;
         inicializarFichas();
     }
 
@@ -34,6 +46,6 @@ public class Partida {
     //TODO: HAHHJAJAJAJAJ
     public void comenzar(){
         tablero.actualizar(jugador1,jugador2);
-        tablero.mostrar(true);
+        tablero.mostrar(false);
     }
 }

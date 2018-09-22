@@ -1,6 +1,5 @@
 package com.company;
 
-import java.sql.SQLOutput;
 
 public class Tablero {
     public static final int ANCHO = 9;

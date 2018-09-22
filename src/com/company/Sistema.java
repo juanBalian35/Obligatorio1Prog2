@@ -17,8 +17,8 @@ public class Sistema {
         jugadores.add(jugador);
     }
 
-    public void jugar(Jugador jugador1, Jugador jugador2){
-        Partida partida = new Partida(jugador1, jugador2);
+    public void jugar(Jugador jugador1, Jugador jugador2, int formaDeTerminar){
+        Partida partida = new Partida(jugador1, jugador2, formaDeTerminar);
         partida.comenzar();
     }
 
