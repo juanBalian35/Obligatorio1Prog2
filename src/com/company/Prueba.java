@@ -60,12 +60,7 @@ public class Prueba {
 
         return natural;
     }
-    public static boolean existeJugadorConAlias(String alias, ArrayList<Jugador> jugadores){
-        for(int i = 0; i < jugadores.size(); ++i)
-            if(jugadores.get(i).getAlias().equals(alias))
-                return true;
-        return false;
-    }
+
     public static void menu(){
         Scanner scanner = new Scanner(System.in);
         Sistema sistema = new Sistema();
@@ -85,16 +80,13 @@ public class Prueba {
             switch(op){
                 case "1":
                     String nombre = ingresarString(scanner,"Ingrese nombre del jugador:");
-
-                    boolean esAliasValido = false;
                     String alias;
                     do{
-                        alias = ingresarString(scanner, "Ingrese alias del jugador: ");
-
-                        esAliasValido = !existeJugadorConAlias(alias, sistema.getJugadores());
-                        if(!esAliasValido)
-                            System.out.println("Ya existe un jugador con ese alias.");
-                    }while(!esAliasValido);
+                      alias  =  ingresarString(scanner, "Ingrese alias del jugador:");
+                      if(sistema.buscarJugador(alias)!=null){
+                          System.out.println("Ya existe un jugador con el mismo alias");
+                      }
+                    }while(sistema.buscarJugador(alias)!=null);
 
                     int edad = ingresarEnteroEnRango(scanner, 6,120,"Ingrese edad del jugador (6-120 años)");
 
@@ -107,23 +99,21 @@ public class Prueba {
                     //TODO: validar que existe con ese alias sino seguir preguntando juan ...
                     String aliasJugador;
                     do{
-                        aliasJugador = ingresarString(scanner, "Ingrese alias del primer jugador: ");
-
-                        esAliasValido = !existeJugadorConAlias(aliasJugador, sistema.getJugadores());
-                        if(!esAliasValido)
-                            System.out.println("No existe un jugador con ese alias.");
-                    }while(!esAliasValido);
+                        aliasJugador  =  ingresarString(scanner, "Ingrese alias del primer jugador:");
+                        if(sistema.buscarJugador(aliasJugador)==null){
+                            System.out.println("No existe un jugador con ese alias, intente de nuevo");
+                        }
+                    }while(sistema.buscarJugador(aliasJugador)==null);
 
                     Jugador j1 = sistema.buscarJugador(aliasJugador);
 
                     do{
-                        aliasJugador = ingresarString(scanner, "Ingrese alias del segundo jugador: ");
+                        aliasJugador  =  ingresarString(scanner, "Ingrese alias del segundo jugador:");
+                        if(sistema.buscarJugador(aliasJugador)==null){
+                            System.out.println("No existe un jugador con ese alias, intente de nuevo");
+                        }
+                    }while(sistema.buscarJugador(aliasJugador)==null);
 
-                        esAliasValido = !existeJugadorConAlias(aliasJugador, sistema.getJugadores());
-                        if(!esAliasValido)
-                            System.out.println("No existe un jugador con ese alias.");
-                    }while(!esAliasValido);
-                    
                     Jugador j2 = sistema.buscarJugador(aliasJugador);
 
                     sistema.jugar(j1, j2);
