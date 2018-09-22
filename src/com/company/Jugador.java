@@ -1,10 +1,14 @@
 package com.company;
 
 public class Jugador {
+    public static final int NUM_FICHAS = 8;
+
     private String alias;
     private String nombre;
     private int edad;
     private int pGanadas;
+
+    private Ficha[] fichas = new Ficha[NUM_FICHAS];
 
     public Jugador(String nombre, String alias, int edad) {
         this.alias = alias;
@@ -38,6 +42,14 @@ public class Jugador {
 
     public int getpGanadas() {
         return pGanadas;
+    }
+
+    public void setFichas(Ficha[] fichas){
+        this.fichas = fichas;
+    }
+
+    public Ficha[] getFichas(){
+        return fichas;
     }
 
     public void setpGanadas(int pGanadas) {

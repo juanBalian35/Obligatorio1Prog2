@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Sistema {
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
