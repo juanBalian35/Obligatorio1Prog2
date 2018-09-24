@@ -56,13 +56,13 @@ public class Tablero {
         int s2 = sumaHorizontal(ficha);
         int s3 = sumaVertical(ficha);
 
-        if(s1[0] < 8)
+        if(s1[0] <= 8)
             movValidos.add(s1[0]);
-        if(s1[1] < 8)
+        if(s1[1] <= 8)
             movValidos.add(s1[1]);
-        if(s2 < 8)
+        if(s2 <= 8)
             movValidos.add(s2);
-        if(s3 < 8)
+        if(s3 <= 8)
             movValidos.add(s3);
 
         /*
@@ -81,9 +81,9 @@ public class Tablero {
 
     private int[] sumaDiagonales(Ficha ficha){
         int x = ficha.getX(), y = ficha.getY();
-        int suma1 = 0, suma2 = 0;
+        int suma1 = ficha.getNumero(), suma2 = ficha.getNumero();
 
-        for(int i = 0; i < Tablero.ANCHO; ++i){
+        for(int i = 1; i < Tablero.ANCHO; ++i){
             int xAtras = x - i, xAdelante = x + i;
 
             int yAtras = y - i, yAdelante = y + i;

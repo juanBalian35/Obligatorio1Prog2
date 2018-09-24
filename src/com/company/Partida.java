@@ -71,7 +71,7 @@ public class Partida {
 
                 char c = str.charAt(1);
 
-                if (n > 1 && n < Jugador.NUM_FICHAS && (c == 'A' || c == 'I' || c == 'D') || str.equals("X"))
+                if (n >= 1 && n < Jugador.NUM_FICHAS && (c == 'A' || c == 'I' || c == 'D') || str.equals("X"))
                     return str.substring(0,1) + ","+ str.substring(1);
                 else
                     System.out.println("Debe ingresar un movimiento valido");
@@ -81,17 +81,10 @@ public class Partida {
         return null;
     }
 
-    private void hacerMovimiento(String mov, Jugador jugador, boolean esJugadorUno){
-        String[] a = mov.split(",");
-        int num = Integer.parseInt(a[0]);
+    private void hacerMovimiento(String movimiento, Jugador jugador, boolean esJugadorUno){
+        String[] a = movimiento.split(",");
 
-        Ficha ficha = new Ficha(0,0,0, false);
-        for(int i = 0; i < jugador.getFichas().length; ++i){
-            Ficha temp = jugador.getFichas()[i];
-            if(temp.getNumero() == num)
-                ficha = temp;
-        }
-
+        Ficha ficha = fichaAMover(movimiento, jugador);
 
         ficha.setY(ficha.getY() + (esJugadorUno ? -1 : 1));
 
@@ -99,6 +92,20 @@ public class Partida {
             ficha.setX(ficha.getX() + 1);
         if(a[1].equals("I"))
             ficha.setX(ficha.getX() - 1);
+    }
+
+    private Ficha fichaAMover(String movimiento, Jugador jugador){
+        String[] a = movimiento.split(",");
+        int num = Integer.parseInt(a[0]);
+
+        Ficha ficha = new Ficha(0,0,0, false);
+        for(int i = 0; i < jugador.getFichas().length; ++i){
+            Ficha temp = jugador.getFichas()[i];
+            if(temp.getNumero() == num)
+                return temp;
+        }
+
+        return null;
     }
 
     //TODO: HAHHJAJAJAJAJ
@@ -109,8 +116,9 @@ public class Partida {
 
         Jugador jugadorActivo = jugador1;
 
+        tablero.actualizar(jugador1, jugador2);
+
         while(!termino){
-            tablero.actualizar(jugador1,jugador2);
             tablero.mostrar(reducido);
 
             String s = pedirMovimiento(jugadorActivo.getAlias());
@@ -124,13 +132,17 @@ public class Partida {
                     reducido = false;
                     break;
                 default:
-                    //ArrayList<Integer> f = tablero.fichasValidas();
 
-                    //for(int i : f){
-                    //    System.out.println("Movimiento valido: " + i);
-                    //}
                     hacerMovimiento(s, jugadorActivo, jugadorActivo == jugador1);
-                    jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
+                    movimientos.add(s);
+                    tablero.actualizar(jugador1, jugador2);
+
+                    ArrayList<Integer> f = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
+
+                    for(int i : f){
+                        System.out.println("Movimiento valido: " + i);
+                    }
+                    //jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
             }
 
         }
