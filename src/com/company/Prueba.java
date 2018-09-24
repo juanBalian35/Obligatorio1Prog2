@@ -96,7 +96,7 @@ public class Prueba {
                     break;
                 case "2":
                     //TODO: validar que existe con ese alias sino seguir preguntando juan ...
-                    String aliasJugador;
+                    /*String aliasJugador;
                     do {
                         aliasJugador = ingresarString(scanner, "Ingrese alias del primer jugador:");
                         if (sistema.buscarJugador(aliasJugador) == null) {
@@ -123,8 +123,12 @@ public class Prueba {
                         System.out.println("2 - Alcanzar con UNA ficha el lado opuesto del tablero");
                         System.out.println("3 - Alcanzar con TODAS las fichas el lado opuesto del tablero");
 
-                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
+                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");*/
 
+
+                    Jugador j1 = new Jugador("baba","1",15);
+                    Jugador j2 = new Jugador("asd","2",15);
+                    int opcion = 2;
                     sistema.jugar(j1, j2, opcion);
 
                     break;

@@ -29,6 +29,9 @@ public class Ficha {
         this.numero = numero;
     }
 
+
+    public boolean getEsRojo(){return esRojo; }
+
     public int getX(){
         return x;
     }
