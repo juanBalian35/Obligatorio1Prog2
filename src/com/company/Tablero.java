@@ -1,7 +1,8 @@
 package com.company;
 
 
-import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Tablero {
     public static final int ANCHO = 9;
@@ -65,16 +66,10 @@ public class Tablero {
         if(s3 <= 8)
             movValidos.add(s3);
 
-        /*
-        for(int i = 0; i < movValidos.size(); ++i){
-            for(int j = i+1; j < movValidos.size(); ++j){
-                if(movValidos.get(i) == movValidos.get(j)){
-                    movValidos.remove(j);
-                    i--;
-                    j--;
-                }
-            }
-        }*/
+        Set<Integer> hs = new HashSet<>();
+        hs.addAll(movValidos);
+        movValidos.clear();
+        movValidos.addAll(hs);
 
         return movValidos;
     }
@@ -129,7 +124,10 @@ public class Tablero {
         return suma;
     }
 
-    private boolean esPosValida(int x, int y){
+    public boolean esPosValida(int x, int y){
         return x >= 0 && x < Tablero.ANCHO && y >= 0 && y < Tablero.LARGO;
+    }
+    public boolean estaPosOcupada(int x, int y){
+        return matriz[y][x] != null;
     }
 }
