@@ -1,5 +1,8 @@
 package com.company;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Prueba {
@@ -129,7 +132,9 @@ public class Prueba {
                     Jugador j1 = new Jugador("baba","1",15);
                     Jugador j2 = new Jugador("asd","2",15);
                     int opcion = 2;
-                    sistema.jugar(j1, j2, opcion);
+                    Date fecha = GregorianCalendar.getInstance().getTime();
+
+                    sistema.jugar(j1, j2, opcion,fecha);
 
                     break;
                 case "3":

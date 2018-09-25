@@ -1,14 +1,22 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
-public class Partida {
+import java.util.*;
+
+public class Partida implements Comparable<Partida> {
     private Tablero tablero = new Tablero();
     private Jugador jugador1, jugador2;
     private int formaDeTerminar;
     private ArrayList<String> movimientos = new ArrayList<>();
+    private Date fecha;
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -21,10 +29,11 @@ public class Partida {
         this.movimientos = movimientos;
     }
 
-    Partida(Jugador j1, Jugador j2, int forma){
+    Partida(Jugador j1, Jugador j2, int forma, Date f){
         jugador1 = j1;
         jugador2 = j2;
         formaDeTerminar = forma;
+        fecha= f;
         inicializarFichas();
     }
 
@@ -76,6 +85,7 @@ public class Partida {
                 else
                     System.out.println("Debe ingresar un movimiento valido");
             }
+
         }
 
         return null;
@@ -106,6 +116,18 @@ public class Partida {
         }
 
         return null;
+    }
+
+@Override
+    public int compareTo(Partida partida){
+        return partida.getFecha().compareTo(getFecha());
+    }
+
+    @Override
+    public String toString() {
+        return jugador1.getAlias() +
+                " vs " + jugador2.getAlias() +
+                ", fecha=" + fecha;
     }
 
     //TODO: HAHHJAJAJAJAJ
@@ -146,6 +168,7 @@ public class Partida {
             }
 
         }
+
 
 
     }
