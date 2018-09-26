@@ -11,11 +11,28 @@ public class Partida implements Comparable<Partida> {
     private int formaDeTerminar;
     private ArrayList<String> movimientos = new ArrayList<>();
     private Date fecha;
+
     public Date getFecha() {
         return fecha;
     }
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Jugador getJugador1() {
+        return jugador1;
+    }
+
+    public void setJugador1(Jugador jugador1) {
+        this.jugador1 = jugador1;
+    }
+
+    public Jugador getJugador2() {
+        return jugador2;
+    }
+
+    public void setJugador2(Jugador jugador2) {
+        this.jugador2 = jugador2;
     }
 
     private Scanner scanner = new Scanner(System.in);
@@ -36,7 +53,7 @@ public class Partida implements Comparable<Partida> {
         inicializarFichas();
     }
 
-    private void inicializarFichas(){
+    public void inicializarFichas(){
         Ficha[] fichas1 = jugador1.getFichas();
         Ficha[] fichas2 = jugador2.getFichas();
 
@@ -57,6 +74,9 @@ public class Partida implements Comparable<Partida> {
     private String pedirMovimiento(Jugador jugador, boolean esJugador1){
         boolean esValido = false;
         while(!esValido){
+            if(!this.getMovimientos().isEmpty()){
+                //TODO: pedir terminar turno
+            }
             String str = Prueba.ingresarString(scanner, "Turno de " + jugador.getAlias() + ": ");
 
             if(str.equals("VERR") || str.equals("VERN") || str.equals("X")) {
@@ -105,7 +125,7 @@ public class Partida implements Comparable<Partida> {
         return null;
     }
 
-    private void hacerMovimiento(String movimiento, Jugador jugador, boolean esJugadorUno){
+    public static void hacerMovimiento(String movimiento, Jugador jugador, boolean esJugadorUno){
         String[] a = movimiento.split(",");
 
         Ficha ficha = fichaAMover(movimiento, jugador);
@@ -118,7 +138,7 @@ public class Partida implements Comparable<Partida> {
             ficha.setX(ficha.getX() - 1);
     }
 
-    private Ficha fichaAMover(String movimiento, Jugador jugador){
+    private static Ficha fichaAMover(String movimiento, Jugador jugador){
         String[] a = movimiento.split(",");
         int num = Integer.parseInt(a[0]);
 
@@ -135,7 +155,7 @@ public class Partida implements Comparable<Partida> {
         return -1;
     }
 
-    public void comenzar(){
+    public Partida comenzar(){
         boolean termino = false;
         boolean reducido = true;
 
@@ -149,7 +169,27 @@ public class Partida implements Comparable<Partida> {
             String s = pedirMovimiento(jugadorActivo, jugadorActivo == jugador1);
             switch(s){
                 case "X":
-                    return;
+                    String opcion=Prueba.ingresarString(scanner,"¿Está seguro que desea abandonar la partida? (SI-NO)");
+                    switch(opcion){
+                        case "SI":
+                            if(jugadorActivo==jugador1){
+                                System.out.println(jugadorActivo.getAlias()+ " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
+                                jugador2.setpGanadas(jugador2.getpGanadas()+1);
+                            }else{
+                                System.out.println(jugadorActivo.getAlias()+ " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
+
+                                jugador1.setpGanadas(jugador1.getpGanadas()+1);
+                            }
+
+                            return this;
+                        case "NO":
+                            break;
+                    }
+
+
+
+
+
                 case "VERR":
                     reducido = true;
                     break;
@@ -173,6 +213,7 @@ public class Partida implements Comparable<Partida> {
                     //jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
             }
         }
+        return this;
     }
 
     @Override

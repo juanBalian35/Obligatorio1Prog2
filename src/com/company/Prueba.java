@@ -67,6 +67,10 @@ public class Prueba {
         Sistema sistema = new Sistema();
 
         boolean salir = false;
+        Jugador j1 = new Jugador("Carlos","carlitos99",16);
+        Jugador j2 = new Jugador("Agustin","agustinote",7);
+        Sistema.getJugadores().add(j1);
+        Sistema.getJugadores().add(j2);
 
         while (!salir) {
             System.out.println("1 - Registrar jugador");
@@ -128,8 +132,7 @@ public class Prueba {
                         int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");*/
 
 
-                    Jugador j1 = new Jugador("baba","1",15);
-                    Jugador j2 = new Jugador("asd","2",15);
+
                     int opcion = 2;
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);

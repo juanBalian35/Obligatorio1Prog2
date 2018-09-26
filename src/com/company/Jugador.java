@@ -1,6 +1,6 @@
 package com.company;
 
-public class Jugador {
+public class Jugador implements Comparable<Jugador> {
     public static final int NUM_FICHAS = 8;
 
     private String alias;
@@ -54,5 +54,15 @@ public class Jugador {
 
     public void setpGanadas(int pGanadas) {
         this.pGanadas = pGanadas;
+    }
+
+    @Override
+    public int compareTo(Jugador jugador) {
+        return jugador.getpGanadas()- this.getpGanadas();
+    }
+
+    @Override
+    public String toString() {
+        return "Alias: " + alias + ", Nombre: " + nombre+ ", Edad:" + edad + ", Partidas ganadas:" + pGanadas;
     }
 }
