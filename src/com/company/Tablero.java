@@ -124,6 +124,19 @@ public class Tablero {
         return suma;
     }
 
+    //TODO: Programar xd
+    private void awa(){
+
+    }
+
+    public boolean unaFichaLadoContrario(){
+        return true;
+    }
+
+    public boolean todasFichaLadoContrario(){
+        return true;
+    }
+
     public boolean esPosValida(int x, int y){
         return x >= 0 && x < Tablero.ANCHO && y >= 0 && y < Tablero.LARGO;
     }

@@ -13,6 +13,7 @@ public class Partida implements Comparable<Partida> {
     private ArrayList<Integer> numFichasValidas = new ArrayList<>();
     private Date fecha;
 
+
     public Date getFecha() {
         return fecha;
     }
@@ -75,9 +76,6 @@ public class Partida implements Comparable<Partida> {
     private String pedirMovimiento(Jugador jugador, boolean esJugador1){
         boolean esValido = false;
         while(!esValido){
-            if(!this.getMovimientos().isEmpty()){
-                //TODO: pedir terminar turno
-            }
             String str = Prueba.ingresarString(scanner, "Turno de " + jugador.getAlias() + ": ");
 
             if(str.equals("VERR") || str.equals("VERN") || str.equals("X")) {
@@ -161,6 +159,29 @@ public class Partida implements Comparable<Partida> {
         return -1;
     }
 
+    private boolean debeTerminar(){
+        switch(formaDeTerminar){
+            case 1:
+                //Alcanzar cantidad maxima de movimientos
+                //if(movimientos.size() == cantidadMaximaDeMovimientos)
+                // return true;
+
+                break;
+            case 2:
+                //Alcanzar con una ficha al otro lado
+                if(tablero.unaFichaLadoContrario()){
+                    return true;
+                }
+                break;
+            case 3:
+                //Alcanzar con todas las fichas al otro lado
+                if(tablero.todasFichaLadoContrario()){
+                    return true;
+                }
+        }
+        return false;
+    }
+
     public Partida comenzar(){
         boolean termino = false;
         boolean reducido = true;
@@ -209,6 +230,10 @@ public class Partida implements Comparable<Partida> {
                     movimientos.add(s + "," + (jugadorActivo == jugador1 ? "1" : "2"));
 
                     tablero.actualizar(jugador1, jugador2);
+
+                    //Terminaaaaa
+                    if(debeTerminar())
+                        break;
 
                     numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
 
