@@ -80,7 +80,14 @@ public class Partida implements Comparable<Partida> {
             }
             String str = Prueba.ingresarString(scanner, "Turno de " + jugador.getAlias() + ": ");
 
-            if(str.equals("VERR") || str.equals("VERN") || str.equals("X") || str.equals("0")) {
+            if(str.equals("0")){
+                if(numFichasValidas.isEmpty()){
+                    System.out.println("Debe de haber pasado un turno antes de cambiar");
+                    continue;
+                }
+                return str;
+            }
+            else if(str.equals("VERR") || str.equals("VERN") || str.equals("X")) {
                 return str;
             }
             else if (str.length() != 2){
