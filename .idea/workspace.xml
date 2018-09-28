@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d91f6f9f-25f5-47b8-bce1-82100aa40bdb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Prueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Prueba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Prueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Prueba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tablero.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,12 +29,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="java" value="6284" />
+          <entry key="java" value="6907" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6284" />
+          <entry key="JAVA" value="6907" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -52,26 +56,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="799">
               <caret line="122" selection-start-line="122" selection-end-line="122" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+            <state relative-caret-position="364">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="233" column="33" selection-start-line="233" selection-start-column="33" selection-end-line="233" selection-end-column="33" />
+            <state relative-caret-position="474">
+              <caret line="168" column="17" lean-forward="true" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
               <folding>
                 <element signature="method#pedirMovimiento#0;class#Partida#0" />
                 <element signature="method#hacerMovimiento#0;class#Partida#0" />
@@ -87,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="102">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -113,13 +117,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="126" column="24" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+            <state relative-caret-position="221">
+              <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
               <folding>
-                <element signature="e#3779#3780#0" expanded="true" />
-                <element signature="e#3806#3807#0" expanded="true" />
-                <element signature="e#3845#3846#0" expanded="true" />
-                <element signature="e#3872#3873#0" expanded="true" />
+                <element signature="e#4254#4255#0" expanded="true" />
+                <element signature="e#4320#4321#0" expanded="true" />
+                <element signature="e#4245#4246#0" expanded="true" />
+                <element signature="e#4326#4327#0" expanded="true" />
+                <element signature="e#4375#4376#0" expanded="true" />
+                <element signature="e#4418#4419#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,6 +159,7 @@
       <find>debe selecc</find>
       <find>debe</find>
       <find>fichasValidas</find>
+      <find>debet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,17 +169,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Jugador.java" />
         <option value="$PROJECT_DIR$/src/com/company/Ficha.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Prueba.java" />
         <option value="$PROJECT_DIR$/src/com/company/Sistema.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Jugador.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tablero.java" />
         <option value="$PROJECT_DIR$/src/com/company/Partida.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Prueba.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="x" value="392" />
+    <option name="y" value="-21" />
     <option name="width" value="1440" />
     <option name="height" value="836" />
   </component>
@@ -210,7 +218,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538176472998" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538178488916" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -307,11 +315,19 @@
         <watch expression="s.charAt(0)" language="JAVA" />
         <watch expression="s.charAt(0) + &quot;&quot;" language="JAVA" />
         <watch expression="Integer.parseInt()" language="JAVA" />
+        <watch expression="Integer.parseInt(s.charAt(0) + &quot;&quot;))" language="JAVA" />
+        <watch expression="Integer.parseInt(s.charAt(0) + &quot;&quot;)" language="JAVA" />
+        <watch expression="matriz[i][fila]" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>matriz[i][fila]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Integer.parseInt(s.charAt(0) + &quot;&quot;)</expression-string>
         <language-id>JAVA</language-id>
@@ -361,13 +377,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -383,37 +392,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="126" column="24" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+        <state relative-caret-position="221">
+          <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
-            <element signature="e#3779#3780#0" expanded="true" />
-            <element signature="e#3806#3807#0" expanded="true" />
-            <element signature="e#3845#3846#0" expanded="true" />
-            <element signature="e#3872#3873#0" expanded="true" />
+            <element signature="e#4254#4255#0" expanded="true" />
+            <element signature="e#4320#4321#0" expanded="true" />
+            <element signature="e#4245#4246#0" expanded="true" />
+            <element signature="e#4326#4327#0" expanded="true" />
+            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="233" column="33" selection-start-line="233" selection-start-column="33" selection-end-line="233" selection-end-column="33" />
+        <state relative-caret-position="474">
+          <caret line="168" column="17" lean-forward="true" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
           <folding>
             <element signature="method#pedirMovimiento#0;class#Partida#0" />
             <element signature="method#hacerMovimiento#0;class#Partida#0" />
@@ -422,6 +426,20 @@
             <element signature="e#8399#8400#0" expanded="true" />
             <element signature="e#8462#8463#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
         </state>
       </provider>
     </entry>

@@ -132,8 +132,7 @@ public class Prueba {
                         int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");*/
 
 
-
-                    int opcion = 2;
+                    int opcion = 1;
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);
 

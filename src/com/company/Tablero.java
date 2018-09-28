@@ -125,16 +125,25 @@ public class Tablero {
     }
 
     //TODO: Programar xd
-    private void awa(){
+    private int contarFichasLadoContrario(boolean esJugadorUno){
+        int numFichas = 0;
+        for(int i = 0, fila = esJugadorUno ? 0 : Tablero.LARGO - 1; i < Tablero.ANCHO; ++i){
+            if(esPosValida(i, fila) && matriz[fila][i] != null){
+                boolean esDeJugarUno = matriz[fila][i].getEsRojo();
 
+                if(esDeJugarUno && esJugadorUno)
+                    numFichas++;
+            }
+        }
+        return numFichas;
     }
 
-    public boolean unaFichaLadoContrario(){
-        return true;
+    public boolean unaFichaLadoContrario(boolean esJugadorUno){
+        return contarFichasLadoContrario(esJugadorUno) > 0;
     }
 
-    public boolean todasFichaLadoContrario(){
-        return true;
+    public boolean todasFichaLadoContrario(boolean esJugadorUno){
+        return contarFichasLadoContrario(esJugadorUno) == Jugador.NUM_FICHAS;
     }
 
     public boolean esPosValida(int x, int y){

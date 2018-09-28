@@ -159,23 +159,26 @@ public class Partida implements Comparable<Partida> {
         return -1;
     }
 
-    private boolean debeTerminar(){
+    private boolean debeTerminar(boolean esJugadorUno, int cantMaxima){
         switch(formaDeTerminar){
             case 1:
                 //Alcanzar cantidad maxima de movimientos
-                //if(movimientos.size() == cantidadMaximaDeMovimientos)
-                // return true;
-
+                if(movimientos.size() == cantMaxima){
+                    System.out.println("Se ha alcanzado la cantidad máxima de movimientos ("+cantMaxima+")");
+                    return true;
+                }
                 break;
             case 2:
                 //Alcanzar con una ficha al otro lado
-                if(tablero.unaFichaLadoContrario()){
+                if(tablero.unaFichaLadoContrario(esJugadorUno)){
+                    System.out.println("Una ficha del lado contrario, terminemos!");
                     return true;
                 }
                 break;
             case 3:
                 //Alcanzar con todas las fichas al otro lado
-                if(tablero.todasFichaLadoContrario()){
+                if(tablero.todasFichaLadoContrario(esJugadorUno)){
+                    System.out.println("todas las fichas del lado contrario, terminemos!");
                     return true;
                 }
         }
@@ -185,10 +188,14 @@ public class Partida implements Comparable<Partida> {
     public Partida comenzar(){
         boolean termino = false;
         boolean reducido = true;
-
+        int cantMaxima = -1;
         Jugador jugadorActivo = jugador1;
 
         tablero.actualizar(jugador1, jugador2);
+
+        if(formaDeTerminar==1){
+            cantMaxima = Prueba.ingresarNatural(scanner,"Ingrese la cantidad maxima de movimientos que desea para la partida:");
+        }
 
         while(!termino){
             tablero.mostrar(reducido);
@@ -232,7 +239,7 @@ public class Partida implements Comparable<Partida> {
                     tablero.actualizar(jugador1, jugador2);
 
                     //Terminaaaaa
-                    if(debeTerminar())
+                    if(debeTerminar(jugadorActivo == jugador1, cantMaxima))
                         break;
 
                     numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
