@@ -10,6 +10,7 @@ public class Partida implements Comparable<Partida> {
     private Jugador jugador1, jugador2;
     private int formaDeTerminar;
     private ArrayList<String> movimientos = new ArrayList<>();
+    private ArrayList<Integer> numFichasValidas = new ArrayList<>();
     private Date fecha;
 
     public Date getFecha() {
@@ -79,7 +80,7 @@ public class Partida implements Comparable<Partida> {
             }
             String str = Prueba.ingresarString(scanner, "Turno de " + jugador.getAlias() + ": ");
 
-            if(str.equals("VERR") || str.equals("VERN") || str.equals("X")) {
+            if(str.equals("VERR") || str.equals("VERN") || str.equals("X") || str.equals("0")) {
                 return str;
             }
             else if (str.length() != 2){
@@ -108,12 +109,14 @@ public class Partida implements Comparable<Partida> {
                 int x = ficha.getX() + (dir == 'D' ? 1 : dir == 'I' ? -1 : 0);
                 int y = ficha.getY() + (esJugador1 ? -1 : 1);
 
-                if(!tablero.esPosValida(x, y))
+                if(n == numFichaAnterior)
+                    System.out.println("No puede mover la misma ficha dos veces");
+                else if(!numFichasValidas.isEmpty() && numFichasValidas.indexOf(ficha.getNumero()) == -1)
+                    System.out.println("Debe seleccionar una ficha valida");
+                else if(!tablero.esPosValida(x, y))
                     System.out.println("La posicion a la que se quiere mover no es valida.");
                 else if(tablero.estaPosOcupada(x, y))
                     System.out.println("La posicion a la que se quiere mover esta ocupada.");
-                else if(n == numFichaAnterior)
-                    System.out.println("No puede mover la misma ficha dos veces");
                 else
                     return movimiento;
             }
@@ -167,29 +170,30 @@ public class Partida implements Comparable<Partida> {
             tablero.mostrar(reducido);
 
             String s = pedirMovimiento(jugadorActivo, jugadorActivo == jugador1);
-            switch(s){
+            switch(s) {
+                case "0":
+                    System.out.println("Cambiando de turno");
+                    numFichasValidas.clear();
+                    //numFichasValidas: Estamo clear (Estamo clial) (Cancion xD)
+                    jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
+                    break;
                 case "X":
-                    String opcion=Prueba.ingresarString(scanner,"¿Está seguro que desea abandonar la partida? (SI-NO)");
-                    switch(opcion){
+                    String opcion = Prueba.ingresarString(scanner, "¿Está seguro que desea abandonar la partida? (SI-NO)");
+                    switch (opcion) {
                         case "SI":
-                            if(jugadorActivo==jugador1){
-                                System.out.println(jugadorActivo.getAlias()+ " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
-                                jugador2.setpGanadas(jugador2.getpGanadas()+1);
-                            }else{
-                                System.out.println(jugadorActivo.getAlias()+ " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
+                            if (jugadorActivo == jugador1) {
+                                System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
+                                jugador2.setpGanadas(jugador2.getpGanadas() + 1);
+                            } else {
+                                System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
 
-                                jugador1.setpGanadas(jugador1.getpGanadas()+1);
+                                jugador1.setpGanadas(jugador1.getpGanadas() + 1);
                             }
 
                             return this;
                         case "NO":
                             break;
                     }
-
-
-
-
-
                 case "VERR":
                     reducido = true;
                     break;
@@ -203,14 +207,21 @@ public class Partida implements Comparable<Partida> {
 
                     tablero.actualizar(jugador1, jugador2);
 
-                    ArrayList<Integer> f = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
+                    numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
 
-                    System.out.println("Fichas validas: ");
-                    Arrays.stream(f.toArray())
-                            .filter(x -> !x.equals(ultimaFichaMovida(jugadorActivo == jugador1)))
-                            .forEach(x -> System.out.print(x + " "));
+                    if (numFichasValidas.contains(Integer.parseInt(s.charAt(0) + "")))
+                        numFichasValidas.remove(numFichasValidas.indexOf(Integer.parseInt(s.charAt(0) + "")));
 
-                    //jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
+                    if (numFichasValidas.isEmpty()) {
+                        System.out.println("No quedan fichas validas, turno de " + (jugador1 == jugadorActivo ? jugador2.getAlias() : jugador1.getAlias()));
+                        jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
+                    } else {
+                        System.out.println("Fichas validas: ");
+                        for (Integer ficha : numFichasValidas) {
+                            System.out.print(ficha + " ");
+                        }
+                        System.out.println("o terminar turno (ingrese 0)");
+                    }
             }
         }
         return this;
