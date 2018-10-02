@@ -67,10 +67,10 @@ public class Prueba {
         Sistema sistema = new Sistema();
 
         boolean salir = false;
-        Jugador j1 = new Jugador("Carlos","carlitos99",16);
-        Jugador j2 = new Jugador("Agustin","agustinote",7);
-        Sistema.getJugadores().add(j1);
-        Sistema.getJugadores().add(j2);
+       // Jugador j1 = new Jugador("Carlos","carlitos99",16);
+        //Jugador j2 = new Jugador("Agustin","agustinote",7);
+        //Sistema.getJugadores().add(j1);
+        //Sistema.getJugadores().add(j2);
 
         while (!salir) {
             System.out.println("1 - Registrar jugador");
@@ -101,8 +101,13 @@ public class Prueba {
                     sistema.registrarJugador(nuevoJugador);
                     break;
                 case "2":
-                    //TODO: validar que existe con ese alias sino seguir preguntando juan ...
-                    /*String aliasJugador;
+
+                    if(Sistema.getJugadores().size()<2){
+                        System.out.println("\nDebe haber registrado al menos dos jugadores para iniciar una partida\n");
+                        break;
+                    }
+
+                    String aliasJugador;
                     do {
                         aliasJugador = ingresarString(scanner, "Ingrese alias del primer jugador:");
                         if (sistema.buscarJugador(aliasJugador) == null) {
@@ -129,10 +134,10 @@ public class Prueba {
                         System.out.println("2 - Alcanzar con UNA ficha el lado opuesto del tablero");
                         System.out.println("3 - Alcanzar con TODAS las fichas el lado opuesto del tablero");
 
-                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");*/
+                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
 
 
-                    int opcion = 1;
+                   // int opcion = 1;
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);
 
@@ -143,8 +148,14 @@ public class Prueba {
                 case "4":
                     sistema.ranking();
                     break;
+                case "0":
+                    salir=true;
+                    System.out.println("------------------------------\n");
+                    System.out.println("  El programa ha finalizado");
+
+                    break;
                 default:
-                    salir = true;
+                    System.out.println("Ingrese una opcion válida");
             }
         }
     }

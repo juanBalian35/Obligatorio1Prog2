@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d91f6f9f-25f5-47b8-bce1-82100aa40bdb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Prueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Prueba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Prueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Prueba.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +57,14 @@
       <file leaf-file-name="Sistema.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+            <state relative-caret-position="360">
+              <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+              <folding>
+                <element signature="method#jugar#0;class#Sistema#0" />
+                <element signature="method#replicar#0;class#Sistema#0" />
+                <element signature="method#ranking#0;class#Sistema#0" />
+                <element signature="method#buscarJugador#0;class#Sistema#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,10 +72,12 @@
       <file leaf-file-name="Prueba.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="136" column="54" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="54" />
+            <state relative-caret-position="158">
+              <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#ingresarString#0;class#Prueba#0" />
+                <element signature="method#ingresarNatural#0;class#Prueba#0" />
+                <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
               </folding>
             </state>
           </provider>
@@ -72,27 +86,11 @@
       <file leaf-file-name="Partida.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="272" column="9" lean-forward="true" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
+            <state relative-caret-position="321">
+              <caret line="289" column="15" lean-forward="true" selection-start-line="289" selection-start-column="15" selection-end-line="289" selection-end-column="15" />
               <folding>
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-                <element signature="e#583#584#0" expanded="true" />
-                <element signature="e#619#620#0" expanded="true" />
-                <element signature="e#650#651#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#775#776#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#855#856#0" expanded="true" />
-                <element signature="e#895#896#0" expanded="true" />
-                <element signature="e#999#1000#0" expanded="true" />
-                <element signature="e#1033#1034#0" expanded="true" />
-                <element signature="e#1098#1099#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-                <element signature="e#10250#10251#0" expanded="true" />
-                <element signature="e#10313#10314#0" expanded="true" />
+                <element signature="e#10450#10451#0" expanded="true" />
+                <element signature="e#10513#10514#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,8 +99,13 @@
       <file leaf-file-name="Jugador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="190">
+              <caret line="21" selection-start-line="21" selection-end-line="22" />
+              <folding>
+                <element signature="method#Jugador#0;class#Jugador#0" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +113,13 @@
       <file leaf-file-name="Ficha.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="600">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <folding>
+                <element signature="method#Ficha#0;class#Ficha#0" />
+                <element signature="method#Ficha#1;class#Ficha#0" />
+                <element signature="method#getEsRojo#0;class#Ficha#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,15 +127,18 @@
       <file leaf-file-name="Tablero.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
+            <state relative-caret-position="285">
+              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#actualizar#0;class#Tablero#0" />
+                <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+                <element signature="method#mostrar#0;class#Tablero#0" />
+                <element signature="method#fichasValidas#0;class#Tablero#0" />
                 <element signature="method#sumaDiagonales#0;class#Tablero#0" />
                 <element signature="method#sumaHorizontal#0;class#Tablero#0" />
                 <element signature="method#sumaVertical#0;class#Tablero#0" />
-                <element signature="e#4254#4255#0" expanded="true" />
-                <element signature="e#4320#4321#0" expanded="true" />
+                <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+                <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
               </folding>
             </state>
           </provider>
@@ -166,6 +177,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -175,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/com/company/Ficha.java" />
         <option value="$PROJECT_DIR$/src/com/company/Sistema.java" />
         <option value="$PROJECT_DIR$/src/com/company/Jugador.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Prueba.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tablero.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Prueba.java" />
         <option value="$PROJECT_DIR$/src/com/company/Partida.java" />
       </list>
     </option>
@@ -194,7 +206,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,6 +229,7 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,6 +239,118 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/ObligatorioProg2/com/company/Partida.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Partida.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -242,7 +366,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="10" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.company.Prueba" />
       <module name="ObligatorioProg2" />
@@ -269,31 +393,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="836" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.329582" />
+      <window_info id="simpleUML" order="2" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32939634" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50069445" side_tool="true" weight="0.3031496" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42765275" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49930555" visible="true" weight="0.3031496" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32939634" />
       <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24930556" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39763778" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Designer" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32939634" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18603411" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -301,17 +431,16 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.329718" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30260304" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32939634" />
-      <window_info id="Designer" order="4" />
       <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39696312" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329718" />
       <window_info anchor="right" id="Maven Projects" order="7" />
@@ -392,19 +521,14 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2144">
           <caret line="134" column="54" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
           </folding>
         </state>
       </provider>
@@ -428,12 +552,15 @@
         <state relative-caret-position="208">
           <caret line="16" column="19" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
             <element signature="method#sumaDiagonales#0;class#Tablero#0" />
             <element signature="method#sumaHorizontal#0;class#Tablero#0" />
             <element signature="method#sumaVertical#0;class#Tablero#0" />
-            <element signature="e#4254#4255#0" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
           </folding>
         </state>
       </provider>
@@ -443,24 +570,8 @@
         <state relative-caret-position="1712">
           <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#10250#10251#0" expanded="true" />
-            <element signature="e#10313#10314#0" expanded="true" />
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,24 +588,8 @@
         <state relative-caret-position="480">
           <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
           <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#10250#10251#0" expanded="true" />
-            <element signature="e#10313#10314#0" expanded="true" />
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -518,12 +613,15 @@
         <state relative-caret-position="624">
           <caret line="39" column="63" lean-forward="true" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
             <element signature="method#sumaDiagonales#0;class#Tablero#0" />
             <element signature="method#sumaHorizontal#0;class#Tablero#0" />
             <element signature="method#sumaVertical#0;class#Tablero#0" />
-            <element signature="e#4254#4255#0" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
           </folding>
         </state>
       </provider>
@@ -533,18 +631,14 @@
         <state relative-caret-position="1040">
           <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -564,12 +658,15 @@
         <state relative-caret-position="1280">
           <caret line="126" column="35" lean-forward="true" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
             <element signature="method#sumaDiagonales#0;class#Tablero#0" />
             <element signature="method#sumaHorizontal#0;class#Tablero#0" />
             <element signature="method#sumaVertical#0;class#Tablero#0" />
-            <element signature="e#4254#4255#0" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
           </folding>
         </state>
       </provider>
@@ -586,7 +683,9 @@
         <state relative-caret-position="33">
           <caret line="134" column="54" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
           </folding>
         </state>
       </provider>
@@ -596,24 +695,211 @@
         <state relative-caret-position="16">
           <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#10250#10251#0" expanded="true" />
-            <element signature="e#10313#10314#0" expanded="true" />
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="22" />
+          <folding>
+            <element signature="method#Jugador#0;class#Jugador#0" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="method#jugar#0;class#Sistema#0" />
+            <element signature="method#replicar#0;class#Sistema#0" />
+            <element signature="method#ranking#0;class#Sistema#0" />
+            <element signature="method#buscarJugador#0;class#Sistema#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="method#Ficha#0;class#Ficha#0" />
+            <element signature="method#Ficha#1;class#Ficha#0" />
+            <element signature="method#getEsRojo#0;class#Ficha#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+          <folding>
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
+            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
+            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
+            <element signature="method#sumaVertical#0;class#Tablero#0" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2173">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="131" column="85" lean-forward="true" selection-start-line="131" selection-start-column="85" selection-end-line="131" selection-end-column="85" />
+          <folding>
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2144">
+          <caret line="134" column="54" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="54" />
+          <folding>
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
+            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
+            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
+            <element signature="method#sumaVertical#0;class#Tablero#0" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1712">
+          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+          <folding>
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+          <folding>
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="39" column="63" lean-forward="true" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
+            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
+            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
+            <element signature="method#sumaVertical#0;class#Tablero#0" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
           </folding>
         </state>
       </provider>
@@ -622,14 +908,32 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
+        <state relative-caret-position="240">
           <caret line="32" column="81" selection-start-line="32" selection-start-column="81" selection-end-line="32" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1280">
+          <caret line="126" column="35" lean-forward="true" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
+          <folding>
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
+            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
+            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
+            <element signature="method#sumaVertical#0;class#Tablero#0" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,51 +947,101 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="136" column="54" selection-start-line="136" selection-start-column="49" selection-end-line="136" selection-end-column="54" />
+          <caret line="134" column="54" selection-start-line="134" selection-start-column="49" selection-end-line="134" selection-end-column="54" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="126" column="10" selection-start-line="126" selection-start-column="10" selection-end-line="126" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
-            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
-            <element signature="method#sumaVertical#0;class#Tablero#0" />
-            <element signature="e#4254#4255#0" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="272" column="9" lean-forward="true" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
+        <state relative-caret-position="16">
+          <caret line="118" column="5" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-            <element signature="e#619#620#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#999#1000#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-            <element signature="e#1098#1099#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#10250#10251#0" expanded="true" />
-            <element signature="e#10313#10314#0" expanded="true" />
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sistema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="method#jugar#0;class#Sistema#0" />
+            <element signature="method#replicar#0;class#Sistema#0" />
+            <element signature="method#ranking#0;class#Sistema#0" />
+            <element signature="method#buscarJugador#0;class#Sistema#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+          <folding>
+            <element signature="method#actualizar#0;class#Tablero#0" />
+            <element signature="method#lineaSeparatoria#0;class#Tablero#0" />
+            <element signature="method#mostrar#0;class#Tablero#0" />
+            <element signature="method#fichasValidas#0;class#Tablero#0" />
+            <element signature="method#sumaDiagonales#0;class#Tablero#0" />
+            <element signature="method#sumaHorizontal#0;class#Tablero#0" />
+            <element signature="method#sumaVertical#0;class#Tablero#0" />
+            <element signature="method#contarFichasLadoContrario#0;class#Tablero#0" />
+            <element signature="method#todasFichaLadoContrario#0;class#Tablero#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Ficha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="method#Ficha#0;class#Ficha#0" />
+            <element signature="method#Ficha#1;class#Ficha#0" />
+            <element signature="method#getEsRojo#0;class#Ficha#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Jugador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" selection-start-line="21" selection-end-line="22" />
+          <folding>
+            <element signature="method#Jugador#0;class#Jugador#0" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Prueba.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+          <folding>
+            <element signature="method#ingresarString#0;class#Prueba#0" />
+            <element signature="method#ingresarNatural#0;class#Prueba#0" />
+            <element signature="method#ingresarEnteroEnRango#0;class#Prueba#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="289" column="15" lean-forward="true" selection-start-line="289" selection-start-column="15" selection-end-line="289" selection-end-column="15" />
+          <folding>
+            <element signature="e#10450#10451#0" expanded="true" />
+            <element signature="e#10513#10514#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,7 +1086,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

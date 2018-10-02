@@ -209,21 +209,28 @@ public class Partida implements Comparable<Partida> {
                     jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
                     break;
                 case "X":
-                    String opcion = Prueba.ingresarString(scanner, "¿Está seguro que desea abandonar la partida? (SI-NO)");
-                    switch (opcion) {
-                        case "SI":
-                            if (jugadorActivo == jugador1) {
-                                System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
-                                jugador2.setpGanadas(jugador2.getpGanadas() + 1);
-                            } else {
-                                System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
+                    boolean salir=false;
+                    while(!salir) {
+                        String opcion = Prueba.ingresarString(scanner, "¿Está seguro que desea abandonar la partida? (SI-NO)");
 
-                                jugador1.setpGanadas(jugador1.getpGanadas() + 1);
-                            }
+                        switch (opcion) {
+                            case "SI":
+                                if (jugadorActivo == jugador1) {
+                                    System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
+                                    jugador2.setpGanadas(jugador2.getpGanadas() + 1);
+                                } else {
+                                    System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
 
-                            return this;
-                        case "NO":
-                            break;
+                                    jugador1.setpGanadas(jugador1.getpGanadas() + 1);
+                                }
+
+                                return this;
+                            case "NO":
+                                salir=true;
+                                break;
+                            default:
+                                System.out.println("Ingrese una opción valida");
+                        }
                     }
                 case "VERR":
                     reducido = true;
@@ -263,17 +270,24 @@ public class Partida implements Comparable<Partida> {
 
         int a = tablero.contarFichasLadoContrario(true);
         int b = tablero.contarFichasLadoContrario(false);
+        System.out.println("+-----------------------------------------+");
+        System.out.println("| Suma de las fichas en el lado contrario |" );
+        System.out.println("+-----------------------------------------+\n");
+
+        System.out.println(jugador1.getAlias() + ": " +  a);
+        System.out.println(jugador2.getAlias() + ": " +  b);
+
 
         if(a > b){
             jugador1.setpGanadas(jugador1.getpGanadas() + 1);
-            System.out.println(jugador1.getAlias() + " gano");
+            System.out.println(jugador1.getAlias() + " ganó la partida" );
         }
         else if(a == b){
-            System.out.println(jugador1.getAlias() + " y " + jugador2.getAlias() + " empataron");
+            System.out.println(jugador1.getAlias() + " y " + jugador2.getAlias() + " han empatado");
         }
         else{
             jugador2.setpGanadas(jugador2.getpGanadas() + 1);
-            System.out.println(jugador2.getAlias() + " gano");
+            System.out.println(jugador2.getAlias() + " ganó la partida");
         }
 
         return this;
