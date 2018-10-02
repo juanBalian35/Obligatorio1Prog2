@@ -259,6 +259,22 @@ public class Partida implements Comparable<Partida> {
                     }
             }
         }
+
+        int a = tablero.contarFichasLadoContrario(true);
+        int b = tablero.contarFichasLadoContrario(false);
+
+        if(a > b){
+            jugador1.setpGanadas(jugador1.getpGanadas() + 1);
+            System.out.println(jugador1.getAlias() + " gano");
+        }
+        if(a == b){
+            System.out.println(jugador1.getAlias() + " y " + jugador2.getAlias() + " empataron");
+        }
+        else{
+            jugador2.setpGanadas(jugador2.getpGanadas() + 1);
+            System.out.println(jugador2.getAlias() + " gano");
+        }
+
         return this;
     }
 

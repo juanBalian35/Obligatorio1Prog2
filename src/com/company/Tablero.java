@@ -124,8 +124,7 @@ public class Tablero {
         return suma;
     }
 
-    //TODO: Programar xd
-    private int contarFichasLadoContrario(boolean esJugadorUno){
+    public int contarFichasLadoContrario(boolean esJugadorUno){
         int numFichas = 0;
         for(int i = 0, fila = esJugadorUno ? 0 : Tablero.LARGO - 1; i < Tablero.ANCHO; ++i){
             if(esPosValida(i, fila) && matriz[fila][i] != null){
