@@ -238,9 +238,10 @@ public class Partida implements Comparable<Partida> {
 
                     tablero.actualizar(jugador1, jugador2);
 
-                    //Terminaaaaa
-                    if(debeTerminar(jugadorActivo == jugador1, cantMaxima))
+                    if(debeTerminar(jugadorActivo == jugador1, cantMaxima)){
+                        termino = true;
                         break;
+                    }
 
                     numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
 
@@ -267,7 +268,7 @@ public class Partida implements Comparable<Partida> {
             jugador1.setpGanadas(jugador1.getpGanadas() + 1);
             System.out.println(jugador1.getAlias() + " gano");
         }
-        if(a == b){
+        else if(a == b){
             System.out.println(jugador1.getAlias() + " y " + jugador2.getAlias() + " empataron");
         }
         else{

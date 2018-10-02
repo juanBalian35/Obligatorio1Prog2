@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d91f6f9f-25f5-47b8-bce1-82100aa40bdb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tablero.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,8 +72,8 @@
       <file leaf-file-name="Partida.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="270" column="69" selection-start-line="270" selection-start-column="69" selection-end-line="270" selection-end-column="69" />
+            <state relative-caret-position="139">
+              <caret line="272" column="9" lean-forward="true" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
               <folding>
                 <element signature="e#482#483#0" expanded="true" />
                 <element signature="e#510#511#0" expanded="true" />
@@ -165,6 +162,7 @@
       <find>debe</find>
       <find>fichasValidas</find>
       <find>debet</find>
+      <find>SE HA ALCA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -280,11 +278,11 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30385852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42765275" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980484" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
@@ -669,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Partida.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="270" column="69" selection-start-line="270" selection-start-column="69" selection-end-line="270" selection-end-column="69" />
+        <state relative-caret-position="139">
+          <caret line="272" column="9" lean-forward="true" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
           <folding>
             <element signature="e#482#483#0" expanded="true" />
             <element signature="e#510#511#0" expanded="true" />
