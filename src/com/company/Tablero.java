@@ -14,7 +14,7 @@ public class Tablero {
         matriz = new Ficha[LARGO][ANCHO];
     }
 
-    void actualizar(Jugador j1, Jugador j2){
+   public void actualizar(Jugador j1, Jugador j2){
         for(int i = 0; i < matriz.length; ++i)
             for(int j = 0; j < matriz[i].length; ++j)
                 matriz[i][j] = null;
@@ -50,7 +50,7 @@ public class Tablero {
         }
     }
 
-    ArrayList<Integer> fichasValidas(Ficha ficha){
+   public ArrayList<Integer> fichasValidas(Ficha ficha){
         ArrayList<Integer> movValidos = new ArrayList<>();
 
         int[] s1 = sumaDiagonales(ficha);

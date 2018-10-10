@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -67,20 +69,24 @@ public class Prueba {
         Sistema sistema = new Sistema();
 
         boolean salir = false;
-       // Jugador j1 = new Jugador("Carlos","carlitos99",16);
-        //Jugador j2 = new Jugador("Agustin","agustinote",7);
-        //Sistema.getJugadores().add(j1);
-        //Sistema.getJugadores().add(j2);
+       /* Jugador j1 = new Jugador("Carlos","carlitos99",16);
+        Jugador j2 = new Jugador("Agustin","agustinote",7);
+        Sistema.getJugadores().add(j1);
+        Sistema.getJugadores().add(j2);*/
 
         while (!salir) {
-            System.out.println("1 - Registrar jugador");
-            System.out.println("2 - Jugar partida");
-            System.out.println("3 - Replicar partida");
-            System.out.println("4 - Ranking");
-            System.out.println("0 - Salir");
-            System.out.print("Eleccion: ");
-
+            System.out.println("+----------------------+");
+            System.out.println("|    MENU PRINCIPAL    |");
+            System.out.println("+----------------------+");
+            System.out.println("|1 - Registrar jugador |");
+            System.out.println("|2 - Jugar partida     |");
+            System.out.println("|3 - Replicar partida  |");
+            System.out.println("|4 - Ranking           |");
+            System.out.println("|0 - Salir             |");
+            System.out.println("+----------------------+");
+            System.out.print("OPCIÓN: ");
             String op = scanner.nextLine();
+
 
             switch (op) {
                 case "1":
@@ -95,16 +101,22 @@ public class Prueba {
 
                     int edad = ingresarEnteroEnRango(scanner, 6, 120, "Ingrese edad del jugador (6-120 años)");
 
-                    scanner.nextLine();
                     Jugador nuevoJugador = new Jugador(nombre, alias, edad);
 
                     sistema.registrarJugador(nuevoJugador);
+
+                    System.out.println("Presione enter para volver al menu principal...");
+                    scanner.nextLine();
                     break;
                 case "2":
 
                     if(Sistema.getJugadores().size()<2){
                         System.out.println("\nDebe haber registrado al menos dos jugadores para iniciar una partida\n");
+
+                        System.out.println("Presione enter para volver al menu principal...");
+                        scanner.nextLine();
                         break;
+
                     }
 
                     String aliasJugador;
@@ -137,16 +149,26 @@ public class Prueba {
                         int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
 
 
-                   // int opcion = 1;
+                   //int opcion = 1;
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);
+
+
+                    System.out.println("Presione enter para volver al menu principal...");
+                    scanner.nextLine();
 
                     break;
                 case "3":
                     sistema.replicar();
+
+                    System.out.println("Presione enter para volver al menu principal...");
+                    scanner.nextLine();
                     break;
                 case "4":
                     sistema.ranking();
+
+                    System.out.println("Presione enter para volver al menu principal...");
+                    scanner.nextLine();
                     break;
                 case "0":
                     salir=true;
@@ -155,7 +177,7 @@ public class Prueba {
 
                     break;
                 default:
-                    System.out.println("Ingrese una opcion válida");
+                    System.out.println("Ingrese una opción válida");
             }
         }
     }

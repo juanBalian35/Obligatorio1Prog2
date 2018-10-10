@@ -48,12 +48,5 @@ public class Ficha {
     public String toString(){
         return (esRojo ? ROJO : AZUL) + getNumero() + RESET;
     }
-/*
-    public void setJugador(Jugador j){
-        this.jugador = j;
-    }
 
-    public Jugador getJugador(){
-        return jugador;
-    }*/
 }

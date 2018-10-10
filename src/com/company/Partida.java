@@ -14,7 +14,17 @@ public class Partida implements Comparable<Partida> {
     private Date fecha;
 
 
-    public Date getFecha() {
+    private Scanner scanner = new Scanner(System.in);
+
+
+	Partida(Jugador j1, Jugador j2, int forma, Date d){
+	    jugador1 = j1;
+	    jugador2 = j2;
+	    formaDeTerminar = forma;
+	    fecha = d;
+	    inicializarFichas();
+	}
+	public Date getFecha() {
         return fecha;
     }
     public void setFecha(Date fecha) {
@@ -37,22 +47,12 @@ public class Partida implements Comparable<Partida> {
         this.jugador2 = jugador2;
     }
 
-    private Scanner scanner = new Scanner(System.in);
-
     public ArrayList<String> getMovimientos() {
         return movimientos;
     }
 
     public void setMovimientos(ArrayList<String> movimientos) {
         this.movimientos = movimientos;
-    }
-
-    Partida(Jugador j1, Jugador j2, int forma, Date d){
-        jugador1 = j1;
-        jugador2 = j2;
-        formaDeTerminar = forma;
-        fecha = d;
-        inicializarFichas();
     }
 
     public void inicializarFichas(){
@@ -164,21 +164,21 @@ public class Partida implements Comparable<Partida> {
             case 1:
                 //Alcanzar cantidad maxima de movimientos
                 if(movimientos.size() == cantMaxima){
-                    System.out.println("Se ha alcanzado la cantidad máxima de movimientos ("+cantMaxima+")");
+                    System.out.println("Se ha alcanzado la cantidad máxima de movimientos ("+cantMaxima+"). JUEGO FINALIZADO");
                     return true;
                 }
                 break;
             case 2:
                 //Alcanzar con una ficha al otro lado
                 if(tablero.unaFichaLadoContrario(esJugadorUno)){
-                    System.out.println("Una ficha del lado contrario, terminemos!");
+                    System.out.println("Una ficha ha alcanzado el lado contrario del tablero. JUEGO FINALIZADO");
                     return true;
                 }
                 break;
             case 3:
                 //Alcanzar con todas las fichas al otro lado
                 if(tablero.todasFichaLadoContrario(esJugadorUno)){
-                    System.out.println("todas las fichas del lado contrario, terminemos!");
+                    System.out.println("Todas las fichas han alcanzado el lado contrario del tablero. JUEGO FINALIZADO");
                     return true;
                 }
         }
@@ -274,20 +274,20 @@ public class Partida implements Comparable<Partida> {
         System.out.println("| Suma de las fichas en el lado contrario |" );
         System.out.println("+-----------------------------------------+\n");
 
-        System.out.println(jugador1.getAlias() + ": " +  a);
-        System.out.println(jugador2.getAlias() + ": " +  b);
+        System.out.println(Ficha.ROJO+  jugador1.getAlias() + Ficha.RESET+  ": " +  a);
+        System.out.println(Ficha.AZUL+ jugador2.getAlias()+ Ficha.RESET + ": " +  b);
 
 
         if(a > b){
             jugador1.setpGanadas(jugador1.getpGanadas() + 1);
-            System.out.println(jugador1.getAlias() + " ganó la partida" );
+            System.out.println(Ficha.ROJO+  jugador1.getAlias() + Ficha.RESET + " ganó la partida" );
         }
         else if(a == b){
-            System.out.println(jugador1.getAlias() + " y " + jugador2.getAlias() + " han empatado");
+            System.out.println(Ficha.ROJO+ jugador1.getAlias() + Ficha.RESET + " y " + Ficha.AZUL + jugador2.getAlias() + Ficha.RESET + " han empatado");
         }
         else{
             jugador2.setpGanadas(jugador2.getpGanadas() + 1);
-            System.out.println(jugador2.getAlias() + " ganó la partida");
+            System.out.println(Ficha.AZUL + jugador2.getAlias() + Ficha.RESET + " ganó la partida");
         }
 
         return this;

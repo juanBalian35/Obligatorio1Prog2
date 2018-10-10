@@ -5,10 +5,10 @@ public class Sistema {
     Scanner scanner = new Scanner(System.in);
     private static ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private ArrayList<Partida> partidas = new ArrayList<>();
-    Jugador j1 = new Jugador("baba","1",15);
-    Jugador j2 = new Jugador("asd","2",15);
-    Partida partida1 = new Partida(j1, j2, 1, GregorianCalendar.getInstance().getTime());
-    Partida partida2 = new Partida(j1, j2, 2, GregorianCalendar.getInstance().getTime());
+    //Jugador j1 = new Jugador("baba","1",15);
+    //Jugador j2 = new Jugador("asd","2",15);
+    //Partida partida1 = new Partida(j1, j2, 1, GregorianCalendar.getInstance().getTime());
+    //Partida partida2 = new Partida(j1, j2, 2, GregorianCalendar.getInstance().getTime());
 
     public ArrayList<Partida> getPartidas() {
         return partidas;
@@ -36,80 +36,91 @@ public class Sistema {
     }
 
     public void replicar(){
-        partidas.add(partida1);
-        partidas.add(partida2);
+       // partidas.add(partida1);
+       //partidas.add(partida2);
         Collections.sort(partidas);
-        for (int i = 0; i < getPartidas().size(); i++) {
-            System.out.println((i+1)+") " + partidas.get(i));
-        }
-        int opcion=Prueba.ingresarEnteroEnRango(scanner,1,partidas.size()+1,("Seleccione la partida que desea replicar (1-"+(partidas.size())+")"));
-        Partida partidaReplicar = partidas.get(opcion-1);
-        Tablero tablero = new Tablero();
-        partidaReplicar.inicializarFichas();
-        System.out.println("Inicia la partida entre " + partidaReplicar.getJugador1().getAlias() + " y " + partidaReplicar.getJugador2().getAlias());
-        tablero.actualizar(partidaReplicar.getJugador1(),partidaReplicar.getJugador2());
-        tablero.mostrar(true);
-        System.out.print("Presione Enter para continuar...");
-        scanner.nextLine();
-
-        for (int i = 0; i < partidaReplicar.getMovimientos().size(); i++) {
-            String mov= partidaReplicar.getMovimientos().get(i);
-           String posicion="";
-            switch(mov.charAt(2)){
-                case 'A':
-                    posicion = "adelante";
-                    break;
-                case 'D':
-                    posicion = "la derecha";
-                    break;
-                case 'I':
-                    posicion = "la izquierda";
-                    break;
-
+        if(partidas.isEmpty()){
+            System.out.println("\nAún no se han jugado partidas\n");
+        }else {
+            for (int i = 0; i < getPartidas().size(); i++) {
+                System.out.println((i + 1) + ") " + partidas.get(i));
             }
-            String alias="";
-
-
-
-            if(mov.charAt(4)=='1') {
-                Partida.hacerMovimiento(mov,partidaReplicar.getJugador1(), true);
-                alias="\u001B[31m" + partidaReplicar.getJugador1().getAlias() +"\u001B[0m";
-
-            } else  {
-                Partida.hacerMovimiento(mov,partidaReplicar.getJugador2(), false);
-                alias="\u001B[34m" + partidaReplicar.getJugador2().getAlias() +"\u001B[0m";
-            }
-            tablero.actualizar(partidaReplicar.getJugador1(),partidaReplicar.getJugador2());
-
+            int opcion = Prueba.ingresarEnteroEnRango(scanner, 1, partidas.size() + 1, ("Seleccione la partida que desea replicar (1-" + (partidas.size()) + ")"));
+            Partida partidaReplicar = partidas.get(opcion - 1);
+            Tablero tablero = new Tablero();
+            partidaReplicar.inicializarFichas();
+            System.out.println("Inicia la partida entre " + partidaReplicar.getJugador1().getAlias() + " y " + partidaReplicar.getJugador2().getAlias());
+            tablero.actualizar(partidaReplicar.getJugador1(), partidaReplicar.getJugador2());
             tablero.mostrar(true);
-            System.out.println();
-            System.out.println(alias+ " movió la ficha " + mov.charAt(0) + " hacia " + posicion);
             System.out.print("Presione Enter para continuar...");
             scanner.nextLine();
 
+            for (int i = 0; i < partidaReplicar.getMovimientos().size(); i++) {
+                String mov = partidaReplicar.getMovimientos().get(i);
+                String posicion = "";
+                switch (mov.charAt(2)) {
+                    case 'A':
+                        posicion = "adelante";
+                        break;
+                    case 'D':
+                        posicion = "la derecha";
+                        break;
+                    case 'I':
+                        posicion = "la izquierda";
+                        break;
+
+                }
+                String alias = "";
+
+
+                if (mov.charAt(4) == '1') {
+                    Partida.hacerMovimiento(mov, partidaReplicar.getJugador1(), true);
+                    alias = Ficha.ROJO + partidaReplicar.getJugador1().getAlias() + Ficha.RESET;
+
+                } else {
+                    Partida.hacerMovimiento(mov, partidaReplicar.getJugador2(), false);
+                    alias = Ficha.AZUL + partidaReplicar.getJugador2().getAlias() + Ficha.RESET;
+                }
+                tablero.actualizar(partidaReplicar.getJugador1(), partidaReplicar.getJugador2());
+
+                tablero.mostrar(true);
+                System.out.println();
+                System.out.println(alias + " movió la ficha " + mov.charAt(0) + " hacia " + posicion);
+                System.out.print("Presione Enter para continuar...");
+                scanner.nextLine();
+
+            }
         }
     }
 
-    public void ranking(){
+    public void ranking() {
         System.out.println("");
         System.out.println("+---------------------------------------------+");
         System.out.println("|RANKING DE JUGADORES CON MAS PARTIDAS GANADAS|");
         System.out.println("+---------------------------------------------+");
         System.out.println("");
         Collections.sort(jugadores);
-        Jugador jugadorAnterior = jugadores.get(0);
-        int posicion = 1;
-        for (int i = 0; i < jugadores.size(); i++) {
-           if(jugadorAnterior.getpGanadas()==jugadores.get(i).getpGanadas())
-               System.out.println((posicion)+ ") " + jugadores.get(i).toString());
-           else{
-               posicion=i+1;
-               System.out.println(posicion+ ") " + jugadores.get(i).toString());
-           }
 
-           jugadorAnterior = jugadores.get(i);
+        if (jugadores.isEmpty()) {
+            System.out.println("Aún no se han registrado jugadores\n");
+        } else {
+
+
+            Jugador jugadorAnterior = jugadores.get(0);
+
+            int posicion = 1;
+            for (int i = 0; i < jugadores.size(); i++) {
+                if (jugadorAnterior.getpGanadas() == jugadores.get(i).getpGanadas())
+                    System.out.println((posicion) + ") " + jugadores.get(i).toString());
+                else {
+                    posicion = i + 1;
+                    System.out.println(posicion + ") " + jugadores.get(i).toString());
+                }
+
+                jugadorAnterior = jugadores.get(i);
+            }
+            System.out.println("");
         }
-        System.out.println("");
     }
 
     public Jugador buscarJugador(String alias){
