@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.tools.internal.ws.wsdl.document.soap.SOAPUse;
-
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;

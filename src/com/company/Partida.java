@@ -13,7 +13,6 @@ public class Partida implements Comparable<Partida> {
     private ArrayList<Integer> numFichasValidas = new ArrayList<>();
     private Date fecha;
 
-
     private Scanner scanner = new Scanner(System.in);
 
 
@@ -94,7 +93,6 @@ public class Partida implements Comparable<Partida> {
                 n = Integer.parseInt(str.charAt(0) + "");
             }
             catch(Exception e){
-                //todo cambiar
                 System.out.println("Debe ingresar un movimiento valido");
                 continue;
             }
@@ -187,18 +185,23 @@ public class Partida implements Comparable<Partida> {
 
     public Partida comenzar(){
         boolean termino = false;
-        boolean reducido = true;
+        boolean verReducido = true;
         int cantMaxima = -1;
         Jugador jugadorActivo = jugador1;
 
         tablero.actualizar(jugador1, jugador2);
 
-        if(formaDeTerminar==1){
+        if(formaDeTerminar == 1){
             cantMaxima = Prueba.ingresarNatural(scanner,"Ingrese la cantidad maxima de movimientos que desea para la partida:");
         }
 
+        mostrarInstrucciones();
+
         while(!termino){
-            tablero.mostrar(reducido);
+            if(formaDeTerminar == 1)
+                System.out.println("Movimientos restantes: " + (cantMaxima - movimientos.size()));
+
+            tablero.mostrar(verReducido);
 
             String s = pedirMovimiento(jugadorActivo, jugadorActivo == jugador1);
             switch(s) {
@@ -233,10 +236,10 @@ public class Partida implements Comparable<Partida> {
                         }
                     }
                 case "VERR":
-                    reducido = true;
+                    verReducido = true;
                     break;
                 case "VERN":
-                    reducido = false;
+                    verReducido = false;
                     break;
                 default:
                     hacerMovimiento(s, jugadorActivo, jugadorActivo == jugador1);
@@ -258,7 +261,8 @@ public class Partida implements Comparable<Partida> {
                     if (numFichasValidas.isEmpty()) {
                         System.out.println("No quedan fichas validas, turno de " + (jugador1 == jugadorActivo ? jugador2.getAlias() : jugador1.getAlias()));
                         jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
-                    } else {
+                    }
+                    else {
                         System.out.println("Fichas validas: ");
                         for (Integer ficha : numFichasValidas) {
                             System.out.print(ficha + " ");
@@ -272,7 +276,7 @@ public class Partida implements Comparable<Partida> {
         int b = tablero.contarFichasLadoContrario(false);
         System.out.println("+-----------------------------------------+");
         System.out.println("| Suma de las fichas en el lado contrario |" );
-        System.out.println("+-----------------------------------------+\n");
+        System.out.println("+-----------------------------------------+");
 
         System.out.println(Ficha.ROJO+  jugador1.getAlias() + Ficha.RESET+  ": " +  a);
         System.out.println(Ficha.AZUL+ jugador2.getAlias()+ Ficha.RESET + ": " +  b);
@@ -291,6 +295,24 @@ public class Partida implements Comparable<Partida> {
         }
 
         return this;
+    }
+
+    private void mostrarInstrucciones(){
+        System.out.println("+--------------------------------+");
+        System.out.println("|         INSTRUCCIONES          |");
+        System.out.println("+--------------------------------+");
+        System.out.println("| Para mover la ficha indique    |");
+        System.out.println("| número de ficha y la dirección |");
+        System.out.println("| en cuál quiere moverla,        |");
+        System.out.println("| ej: 1A, 3D, 7I                 |");
+        System.out.println("+--------------------------------+");
+        System.out.println("| 0 - Pasar de turno             |");
+        System.out.println("| X - Abandonar partida          |");
+        System.out.println("| VERR - Ver tablero de forma    |");
+        System.out.println("|        reducida                |");
+        System.out.println("| VERN - Ver tablero de forma    |");
+        System.out.println("|        normal                  |");
+        System.out.println("+--------------------------------+");
     }
 
     @Override
