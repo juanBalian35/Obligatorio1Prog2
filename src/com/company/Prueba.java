@@ -85,7 +85,6 @@ public class Prueba {
             System.out.print("OPCIÓN: ");
             String op = scanner.nextLine();
 
-
             switch (op) {
                 case "1":
                     String nombre = ingresarString(scanner, "Ingrese nombre del jugador:");

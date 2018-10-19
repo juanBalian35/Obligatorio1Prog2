@@ -15,7 +15,6 @@ public class Partida implements Comparable<Partida> {
 
     private Scanner scanner = new Scanner(System.in);
 
-
 	Partida(Jugador j1, Jugador j2, int forma, Date d){
 	    jugador1 = j1;
 	    jugador2 = j2;
@@ -49,6 +48,8 @@ public class Partida implements Comparable<Partida> {
     public ArrayList<String> getMovimientos() {
         return movimientos;
     }
+
+    public void setTablero(Tablero tablero){this.tablero = tablero; }
 
     public void setMovimientos(ArrayList<String> movimientos) {
         this.movimientos = movimientos;
@@ -165,18 +166,21 @@ public class Partida implements Comparable<Partida> {
                     System.out.println("Se ha alcanzado la cantidad máxima de movimientos ("+cantMaxima+"). JUEGO FINALIZADO");
                     return true;
                 }
+
+                // En el caso de que se este jugando con una cantidad maxima de movmimientos y un jugador llego con
+                // todas sus fichas al otro extremo del tablero, entonces no va a poder seguir jugando, entonces
+                // a pesar de seguir habiendo movimientos restantes el juego debe terminar.
+            case 3:
+                //Alcanzar con todas las fichas al otro lado.
+                if(tablero.todasFichaLadoContrario(esJugadorUno)){
+                    System.out.println("Todas las fichas han alcanzado el lado contrario del tablero. JUEGO FINALIZADO");
+                    return true;
+                }
                 break;
             case 2:
                 //Alcanzar con una ficha al otro lado
                 if(tablero.unaFichaLadoContrario(esJugadorUno)){
                     System.out.println("Una ficha ha alcanzado el lado contrario del tablero. JUEGO FINALIZADO");
-                    return true;
-                }
-                break;
-            case 3:
-                //Alcanzar con todas las fichas al otro lado
-                if(tablero.todasFichaLadoContrario(esJugadorUno)){
-                    System.out.println("Todas las fichas han alcanzado el lado contrario del tablero. JUEGO FINALIZADO");
                     return true;
                 }
         }
@@ -192,7 +196,11 @@ public class Partida implements Comparable<Partida> {
         tablero.actualizar(jugador1, jugador2);
 
         if(formaDeTerminar == 1){
-            cantMaxima = Prueba.ingresarNatural(scanner,"Ingrese la cantidad maxima de movimientos que desea para la partida:");
+            do{
+                cantMaxima = Prueba.ingresarNatural(scanner, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
+                if(cantMaxima < 10)
+                    System.out.println("Ingrese un numero de movimientos mayor o igual a 10");
+            } while(cantMaxima < 10);
         }
 
         mostrarInstrucciones();
@@ -208,7 +216,6 @@ public class Partida implements Comparable<Partida> {
                 case "0":
                     System.out.println("Cambiando de turno");
                     numFichasValidas.clear();
-                    //numFichasValidas: Estamo clear (Estamo clial) (Cancion xD)
                     jugadorActivo = jugadorActivo == jugador1 ? jugador2 : jugador1;
                     break;
                 case "X":
@@ -218,6 +225,7 @@ public class Partida implements Comparable<Partida> {
 
                         switch (opcion) {
                             case "SI":
+                                movimientos.add(s + " , " + (jugadorActivo == jugador1 ? "1" : "2"));
                                 if (jugadorActivo == jugador1) {
                                     System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
                                     jugador2.setpGanadas(jugador2.getpGanadas() + 1);
@@ -272,6 +280,12 @@ public class Partida implements Comparable<Partida> {
             }
         }
 
+        mostrarGanador(true);
+
+        return this;
+    }
+
+    public void mostrarGanador(boolean guardarInformacion){
         int a = tablero.contarFichasLadoContrario(true);
         int b = tablero.contarFichasLadoContrario(false);
         System.out.println("+-----------------------------------------+");
@@ -281,20 +295,29 @@ public class Partida implements Comparable<Partida> {
         System.out.println(Ficha.ROJO+  jugador1.getAlias() + Ficha.RESET+  ": " +  a);
         System.out.println(Ficha.AZUL+ jugador2.getAlias()+ Ficha.RESET + ": " +  b);
 
-
         if(a > b){
-            jugador1.setpGanadas(jugador1.getpGanadas() + 1);
+            if(guardarInformacion)
+                jugador1.setpGanadas(jugador1.getpGanadas() + 1);
+
             System.out.println(Ficha.ROJO+  jugador1.getAlias() + Ficha.RESET + " ganó la partida" );
         }
         else if(a == b){
-            System.out.println(Ficha.ROJO+ jugador1.getAlias() + Ficha.RESET + " y " + Ficha.AZUL + jugador2.getAlias() + Ficha.RESET + " han empatado");
+            if("X".equals(movimientos.get(movimientos.size() - 1).charAt(0) + "")) {
+                if("1".equals(movimientos.get(movimientos.size() - 1).charAt(4) + ""))
+                    System.out.println(jugador1.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
+                else
+                    System.out.println(jugador2.getAlias() + " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
+            }
+            else{
+                System.out.println(Ficha.ROJO+ jugador1.getAlias() + Ficha.RESET + " y " + Ficha.AZUL + jugador2.getAlias() + Ficha.RESET + " han empatado");
+            }
         }
         else{
-            jugador2.setpGanadas(jugador2.getpGanadas() + 1);
+            if(guardarInformacion)
+                jugador2.setpGanadas(jugador2.getpGanadas() + 1);
+
             System.out.println(Ficha.AZUL + jugador2.getAlias() + Ficha.RESET + " ganó la partida");
         }
-
-        return this;
     }
 
     private void mostrarInstrucciones(){
