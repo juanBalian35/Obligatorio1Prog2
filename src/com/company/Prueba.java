@@ -101,7 +101,7 @@ public class Prueba {
                     Jugador nuevoJugador = new Jugador(nombre, alias, edad);
 
                     sistema.registrarJugador(nuevoJugador);
-
+                    System.out.println("El jugador ha sido registrado exitosamente.");
                     System.out.println("Presione enter para volver al menu principal...");
                     scanner.nextLine();
                     break;

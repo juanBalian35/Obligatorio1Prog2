@@ -195,13 +195,8 @@ public class Partida implements Comparable<Partida> {
 
         tablero.actualizar(jugador1, jugador2);
 
-        if(formaDeTerminar == 1){
-            do{
-                cantMaxima = Prueba.ingresarNatural(scanner, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
-                if(cantMaxima < 10)
-                    System.out.println("Ingrese un numero de movimientos mayor o igual a 10");
-            } while(cantMaxima < 10);
-        }
+        if(formaDeTerminar == 1)
+            cantMaxima = Prueba.ingresarEnteroEnRango(scanner, 10, 100, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
 
         mostrarInstrucciones();
 
@@ -321,21 +316,18 @@ public class Partida implements Comparable<Partida> {
     }
 
     private void mostrarInstrucciones(){
-        System.out.println("+--------------------------------+");
-        System.out.println("|         INSTRUCCIONES          |");
-        System.out.println("+--------------------------------+");
-        System.out.println("| Para mover la ficha indique    |");
-        System.out.println("| número de ficha y la dirección |");
-        System.out.println("| en cuál quiere moverla,        |");
-        System.out.println("| ej: 1A, 3D, 7I                 |");
-        System.out.println("+--------------------------------+");
-        System.out.println("| 0 - Pasar de turno             |");
-        System.out.println("| X - Abandonar partida          |");
-        System.out.println("| VERR - Ver tablero de forma    |");
-        System.out.println("|        reducida                |");
-        System.out.println("| VERN - Ver tablero de forma    |");
-        System.out.println("|        normal                  |");
-        System.out.println("+--------------------------------+");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("|                 INSTRUCCIONES                  |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Para mover la ficha indique: número de ficha y |");
+        System.out.println("| la dirección en cuál quiere moverla.           |");
+        System.out.println("| ej: 1A, 3D, 7I                                 |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("|   0  - Pasar de turno.                         |");
+        System.out.println("|   X  - Abandonar partida.                      |");
+        System.out.println("| VERR - Ver tablero de forma reducida.          |");
+        System.out.println("| VERN - Ver tablero de forma normal.            |");
+        System.out.println("+------------------------------------------------+");
     }
 
     @Override
