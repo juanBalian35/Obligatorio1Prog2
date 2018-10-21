@@ -100,8 +100,6 @@ public class Prueba {
 
                     sistema.registrarJugador(nuevoJugador);
                     System.out.println("El jugador ha sido registrado exitosamente.");
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "2":
                     if(Sistema.getJugadores().size()<2){
@@ -140,28 +138,26 @@ public class Prueba {
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);
 
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "3":
                     sistema.replicar();
-
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "4":
                     sistema.ranking();
-
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "0":
                     salir=true;
+
                     System.out.println("------------------------------\n");
                     System.out.println("El programa ha finalizado");
                     break;
                 default:
                     System.out.println("Ingrese una opción válida");
+            }
+
+            if(!salir){
+                System.out.println("Presione enter para volver al menu principal...");
+                scanner.nextLine();
             }
         }
     }
