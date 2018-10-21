@@ -1,20 +1,24 @@
 package com.company;
 
-
 import java.util.*;
-import java.util.stream.Collectors;
+
+/*
+ * Creado por:
+ *   Juan Balian - 211150
+ *   Agustín Introini - 211064
+ * */
 
 public class Tablero {
     public static final int ANCHO = 9;
     public static final int LARGO = 8;
 
-    Ficha[][] matriz;
+    private Ficha[][] matriz;
 
     Tablero(){
         matriz = new Ficha[LARGO][ANCHO];
     }
 
-   public void actualizar(Jugador j1, Jugador j2){
+    public void actualizar(Jugador j1, Jugador j2){
         for(int i = 0; i < matriz.length; ++i)
             for(int j = 0; j < matriz[i].length; ++j)
                 matriz[i][j] = null;
@@ -36,8 +40,6 @@ public class Tablero {
     }
 
     public void mostrar(boolean reducido){
-        String out = "";
-
         System.out.println(reducido ? "" : lineaSeparatoria());
         for(int i = 0; i < LARGO; ++i){
             for(int j = 0; j < ANCHO; ++j){
@@ -50,7 +52,7 @@ public class Tablero {
         }
     }
 
-   public ArrayList<Integer> fichasValidas(Ficha ficha){
+    public ArrayList<Integer> fichasValidas(Ficha ficha){
         ArrayList<Integer> movValidos = new ArrayList<>();
 
         int[] s1 = sumaDiagonales(ficha);
@@ -66,6 +68,7 @@ public class Tablero {
         if(s3 <= 8)
             movValidos.add(s3);
 
+        //Removemos duplicados del ArrayList
         Set<Integer> hs = new HashSet<>();
         hs.addAll(movValidos);
         movValidos.clear();
@@ -82,8 +85,6 @@ public class Tablero {
             int xAtras = x - i, xAdelante = x + i;
 
             int yAtras = y - i, yAdelante = y + i;
-
-            //System.out.println("xAtras: " + xAtras + " xAdelante " + xAdelante + " yAtras " + yAtras + " yAdelante "+ yAdelante);
 
             if(esPosValida(xAtras, yAtras))
                 suma1 += matriz[yAtras][xAtras] == null ? 0 : matriz[yAtras][xAtras].getNumero();

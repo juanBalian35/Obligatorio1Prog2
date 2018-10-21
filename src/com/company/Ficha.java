@@ -1,5 +1,11 @@
 package com.company;
 
+/*
+ * Creado por:
+ *   Juan Balian - 211150
+ *   Agustín Introini - 211064
+ * */
+
 public class Ficha {
     public static final String RESET = "\u001B[0m";
     public static final String ROJO = "\u001B[31m";
@@ -9,8 +15,6 @@ public class Ficha {
     private int y;
     private int numero;
     private boolean esRojo;
-
-    Ficha(){ }
 
     Ficha(int x, int y, int numero, boolean b){
         this.x = x;
@@ -28,7 +32,6 @@ public class Ficha {
     public void setNumero(int numero){
         this.numero = numero;
     }
-
 
     public boolean getEsRojo(){return esRojo; }
 
@@ -48,5 +51,4 @@ public class Ficha {
     public String toString(){
         return (esRojo ? ROJO : AZUL) + getNumero() + RESET;
     }
-
 }
