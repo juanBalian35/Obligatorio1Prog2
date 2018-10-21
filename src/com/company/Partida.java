@@ -321,21 +321,18 @@ public class Partida implements Comparable<Partida> {
     }
 
     private void mostrarInstrucciones(){
-        System.out.println("+--------------------------------+");
-        System.out.println("|         INSTRUCCIONES          |");
-        System.out.println("+--------------------------------+");
-        System.out.println("| Para mover la ficha indique    |");
-        System.out.println("| número de ficha y la dirección |");
-        System.out.println("| en cuál quiere moverla,        |");
-        System.out.println("| ej: 1A, 3D, 7I                 |");
-        System.out.println("+--------------------------------+");
-        System.out.println("| 0 - Pasar de turno             |");
-        System.out.println("| X - Abandonar partida          |");
-        System.out.println("| VERR - Ver tablero de forma    |");
-        System.out.println("|        reducida                |");
-        System.out.println("| VERN - Ver tablero de forma    |");
-        System.out.println("|        normal                  |");
-        System.out.println("+--------------------------------+");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("|                 INSTRUCCIONES                  |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("| Para mover la ficha indique: número de ficha y |");
+        System.out.println("| la dirección en cuál quiere moverla.           |");
+        System.out.println("| ej: 1A, 3D, 7I                                 |");
+        System.out.println("+------------------------------------------------+");
+        System.out.println("|   0  - Pasar de turno.                         |");
+        System.out.println("|   X  - Abandonar partida.                      |");
+        System.out.println("| VERR - Ver tablero de forma reducida.          |");
+        System.out.println("| VERN - Ver tablero de forma normal.            |");
+        System.out.println("+------------------------------------------------+");
     }
 
     @Override
