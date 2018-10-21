@@ -195,13 +195,8 @@ public class Partida implements Comparable<Partida> {
 
         tablero.actualizar(jugador1, jugador2);
 
-        if(formaDeTerminar == 1){
-            do{
-                cantMaxima = Prueba.ingresarNatural(scanner, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
-                if(cantMaxima < 10)
-                    System.out.println("Ingrese un numero de movimientos mayor o igual a 10");
-            } while(cantMaxima < 10);
-        }
+        if(formaDeTerminar == 1)
+            cantMaxima = Prueba.ingresarEnteroEnRango(scanner, 10, 100, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
 
         mostrarInstrucciones();
 
