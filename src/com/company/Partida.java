@@ -1,7 +1,8 @@
 package com.company;
 
 import java.util.*;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 /*
 * Creado por:
 *   Juan Balian - 211150
@@ -16,6 +17,9 @@ public class Partida implements Comparable<Partida> {
     private ArrayList<String> movimientos = new ArrayList<>();
     private ArrayList<Integer> numFichasValidas = new ArrayList<>();
     private Date fecha;
+    private DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -345,8 +349,8 @@ public class Partida implements Comparable<Partida> {
     }
     @Override
     public String toString() {
-        return jugador1.getAlias() +
-                " vs " + jugador2.getAlias() +
-                ", fecha=" + fecha;
+        return Ficha.ROJO + jugador1.getAlias() + Ficha.RESET +
+                " vs " + Ficha.AZUL + jugador2.getAlias() + Ficha.RESET+
+                ", Fecha: " + formato.format(fecha);
     }
 }

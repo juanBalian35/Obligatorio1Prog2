@@ -99,19 +99,32 @@ public class Sistema {
     }
 
     public void ranking() {
-        System.out.println("\n+---------------------------------------------+");
+        System.out.println("");
+        System.out.println("+---------------------------------------------+");
         System.out.println("|RANKING DE JUGADORES CON MAS PARTIDAS GANADAS|");
-        System.out.println("+---------------------------------------------+\n");
+        System.out.println("+---------------------------------------------+");
+        System.out.println("");
         Collections.sort(jugadores);
 
         if (jugadores.isEmpty()) {
             System.out.println("Aún no se han registrado jugadores\n");
-        }
-        else {
-            for (int i = 0; i < jugadores.size(); i++)
-                System.out.println((i+1) + ") " + jugadores.get(i).toString());
+        } else {
 
-            System.out.println();
+
+            Jugador jugadorAnterior = jugadores.get(0);
+
+            int posicion = 1;
+            for (int i = 0; i < jugadores.size(); i++) {
+                if (jugadorAnterior.getpGanadas() == jugadores.get(i).getpGanadas())
+                    System.out.println((posicion) + ") " + jugadores.get(i).toString());
+                else {
+                    posicion = i + 1;
+                    System.out.println(posicion + ") " + jugadores.get(i).toString());
+                }
+
+                jugadorAnterior = jugadores.get(i);
+            }
+            System.out.println("");
         }
     }
 
