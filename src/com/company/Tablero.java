@@ -52,27 +52,46 @@ public class Tablero {
         }
     }
 
-    public ArrayList<Integer> fichasValidas(Ficha ficha){
+    public ArrayList<Integer> fichasValidas(Ficha ficha, boolean esJugadorUno){
         ArrayList<Integer> movValidos = new ArrayList<>();
 
         int[] s1 = sumaDiagonales(ficha);
         int s2 = sumaHorizontal(ficha);
         int s3 = sumaVertical(ficha);
 
-        if(s1[0] <= 8)
+        if(s1[0] <= Jugador.NUM_FICHAS)
             movValidos.add(s1[0]);
-        if(s1[1] <= 8)
+        if(s1[1] <= Jugador.NUM_FICHAS)
             movValidos.add(s1[1]);
-        if(s2 <= 8)
+        if(s2 <= Jugador.NUM_FICHAS)
             movValidos.add(s2);
-        if(s3 <= 8)
+        if(s3 <= Jugador.NUM_FICHAS)
             movValidos.add(s3);
 
-        //Removemos duplicados del ArrayList
+        // Removemos duplicados del ArrayList
         Set<Integer> hs = new HashSet<>();
         hs.addAll(movValidos);
         movValidos.clear();
         movValidos.addAll(hs);
+
+        // Si no se puede mover mas la ficha, la sacamos de sugerencias
+        ArrayList<Integer> fichasABorrar = new ArrayList<>();
+
+        for(Integer numFicha : movValidos){
+            int fila = esJugadorUno ? 0 : Tablero.LARGO - 1;
+            for(int x = 0; x < Tablero.ANCHO; ++x){
+                if(matriz[fila][x] == null)
+                    continue;
+
+                boolean esFichaDeJugadorUno = matriz[fila][x].getEsRojo();
+                boolean esFichaDelJugadorCorrecto = (esFichaDeJugadorUno && esJugadorUno) || (!esFichaDeJugadorUno && !esJugadorUno);
+
+                if(matriz[fila][x].getNumero() == numFicha && esFichaDelJugadorCorrecto)
+                    fichasABorrar.add(numFicha);
+            }
+        }
+
+        movValidos.removeAll(fichasABorrar);
 
         return movValidos;
     }
@@ -126,16 +145,20 @@ public class Tablero {
     }
 
     public int contarFichasLadoContrario(boolean esJugadorUno){
-        int numFichas = 0;
+        int numFichasJugadorUno = 0;
+        int numFichasJugadorDos = 0;
         for(int i = 0, fila = esJugadorUno ? 0 : Tablero.LARGO - 1; i < Tablero.ANCHO; ++i){
             if(esPosValida(i, fila) && matriz[fila][i] != null){
-                boolean esDeJugarUno = matriz[fila][i].getEsRojo();
+                boolean esFichaDeJugadorUno = matriz[fila][i].getEsRojo();
 
-                if(esDeJugarUno && esJugadorUno)
-                    numFichas++;
+                if (esFichaDeJugadorUno && esJugadorUno)
+                    numFichasJugadorUno++;
+
+                if (!esFichaDeJugadorUno && !esJugadorUno)
+                    numFichasJugadorDos++;
             }
         }
-        return numFichas;
+        return esJugadorUno ? numFichasJugadorUno : numFichasJugadorDos;
     }
 
     public boolean unaFichaLadoContrario(boolean esJugadorUno){

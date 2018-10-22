@@ -104,9 +104,6 @@ public class Prueba {
                 case "2":
                     if(Sistema.getJugadores().size()<2){
                         System.out.println("\nDebe haber registrado al menos dos jugadores para iniciar una partida\n");
-
-                        System.out.println("Presione enter para volver al menu principal...");
-                        scanner.nextLine();
                         break;
                     }
 
