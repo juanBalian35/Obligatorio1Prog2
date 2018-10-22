@@ -19,8 +19,6 @@ public class Partida implements Comparable<Partida> {
     private Date fecha;
     private DateFormat formato = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
-
-
     private Scanner scanner = new Scanner(System.in);
 
 	Partida(Jugador j1, Jugador j2, int forma, Date d){
