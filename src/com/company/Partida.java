@@ -1,13 +1,17 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
+
+/*
+* Creado por:
+*   Juan Balian - 211150
+*   Agustín Introini - 211064
+* */
 
 public class Partida implements Comparable<Partida> {
     private Tablero tablero = new Tablero();
-    private Jugador jugador1, jugador2;
+    private Jugador jugador1;
+    private Jugador jugador2;
     private int formaDeTerminar;
     private ArrayList<String> movimientos = new ArrayList<>();
     private ArrayList<Integer> numFichasValidas = new ArrayList<>();
@@ -22,6 +26,7 @@ public class Partida implements Comparable<Partida> {
 	    fecha = d;
 	    inicializarFichas();
 	}
+
 	public Date getFecha() {
         return fecha;
     }
@@ -59,10 +64,11 @@ public class Partida implements Comparable<Partida> {
         Ficha[] fichas1 = jugador1.getFichas();
         Ficha[] fichas2 = jugador2.getFichas();
 
+        // Ubicamos las fichas
         for(int i = 0; i < Jugador.NUM_FICHAS; ++i){
-            //Fichas del jugador 1
             Ficha ficha = new Ficha(i, Tablero.LARGO - 1, Jugador.NUM_FICHAS-i, true);
             fichas1[i] = ficha;
+
             ficha = new Ficha(Tablero.ANCHO - 1 - i, 0, Jugador.NUM_FICHAS-i, false);
             fichas2[i] = ficha;
         }
@@ -70,7 +76,7 @@ public class Partida implements Comparable<Partida> {
         jugador1.setFichas(fichas1);
         jugador2.setFichas(fichas2);
 
-        tablero.actualizar(jugador1,jugador2);
+        tablero.actualizar(jugador1, jugador2);
     }
 
     private String pedirMovimiento(Jugador jugador, boolean esJugador1){
@@ -196,7 +202,7 @@ public class Partida implements Comparable<Partida> {
         tablero.actualizar(jugador1, jugador2);
 
         if(formaDeTerminar == 1)
-            cantMaxima = Prueba.ingresarEnteroEnRango(scanner, 10, 100, "Ingrese la cantidad maxima de movimientos que desea para la partida (minimo 10):");
+            cantMaxima = Prueba.ingresarEnteroEnRango(scanner, 10, 200, "Ingrese la cantidad maxima de movimientos que desea para la partida:");
 
         mostrarInstrucciones();
 
@@ -224,7 +230,8 @@ public class Partida implements Comparable<Partida> {
                                 if (jugadorActivo == jugador1) {
                                     System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador2.getAlias() + " es el ganador");
                                     jugador2.setpGanadas(jugador2.getpGanadas() + 1);
-                                } else {
+                                }
+                                else {
                                     System.out.println(jugadorActivo.getAlias() + " ha abandonado la partida, " + jugador1.getAlias() + " es el ganador");
 
                                     jugador1.setpGanadas(jugador1.getpGanadas() + 1);
@@ -256,7 +263,7 @@ public class Partida implements Comparable<Partida> {
                         break;
                     }
 
-                    numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo));
+                    numFichasValidas = tablero.fichasValidas(fichaAMover(s, jugadorActivo), jugadorActivo == jugador1);
 
                     if (numFichasValidas.contains(Integer.parseInt(s.charAt(0) + "")))
                         numFichasValidas.remove(numFichasValidas.indexOf(Integer.parseInt(s.charAt(0) + "")));
@@ -280,6 +287,8 @@ public class Partida implements Comparable<Partida> {
         return this;
     }
 
+
+    // Si guardarInformacion es true agrega al ganador una partida ganada
     public void mostrarGanador(boolean guardarInformacion){
         int a = tablero.contarFichasLadoContrario(true);
         int b = tablero.contarFichasLadoContrario(false);

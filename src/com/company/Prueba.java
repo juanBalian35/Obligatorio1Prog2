@@ -1,8 +1,12 @@
 package com.company;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
+import java.util.*;
+
+/*
+ * Creado por:
+ *   Juan Balian - 211150
+ *   Agustín Introini - 211064
+ * */
 
 public class Prueba {
     public static String ingresarString(Scanner scanner, String mensaje) {
@@ -29,7 +33,8 @@ public class Prueba {
             try {
                 natural = Integer.parseInt(naturalStr);
                 esNatural = natural >= 0;
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 esNatural = false;
             }
 
@@ -46,16 +51,15 @@ public class Prueba {
 
     public static int ingresarEnteroEnRango(Scanner scanner, int min, int max, String mensaje) {
         int natural;
-        boolean estaEnRango = false;
+        boolean estaEnRango;
         do {
             natural = ingresarNatural(scanner, mensaje);
             estaEnRango = estaEnRango(natural, min, max);
             if (!estaEnRango) {
-                if (min == max) {
+                if (min == max)
                     System.out.println("Solo puede ingresar " + min);
-                } else {
+                else
                     System.out.println("Debe ingresar un numero natural entre " + min + " y " + max);
-                }
             }
         } while (!estaEnRango);
 
@@ -67,11 +71,6 @@ public class Prueba {
         Sistema sistema = new Sistema();
 
         boolean salir = false;
-       /* Jugador j1 = new Jugador("Carlos","carlitos99",16);
-        Jugador j2 = new Jugador("Agustin","agustinote",7);
-        Sistema.getJugadores().add(j1);
-        Sistema.getJugadores().add(j2);*/
-
         while (!salir) {
             System.out.println("+----------------------+");
             System.out.println("|    MENU PRINCIPAL    |");
@@ -91,9 +90,8 @@ public class Prueba {
                     String alias;
                     do {
                         alias = ingresarString(scanner, "Ingrese alias del jugador:");
-                        if (sistema.buscarJugador(alias) != null) {
+                        if (sistema.buscarJugador(alias) != null)
                             System.out.println("Ya existe un jugador con el mismo alias");
-                        }
                     } while (sistema.buscarJugador(alias) != null);
 
                     int edad = ingresarEnteroEnRango(scanner, 6, 120, "Ingrese edad del jugador (6-120 años)");
@@ -102,79 +100,61 @@ public class Prueba {
 
                     sistema.registrarJugador(nuevoJugador);
                     System.out.println("El jugador ha sido registrado exitosamente.");
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "2":
-
                     if(Sistema.getJugadores().size()<2){
                         System.out.println("\nDebe haber registrado al menos dos jugadores para iniciar una partida\n");
-
-                        System.out.println("Presione enter para volver al menu principal...");
-                        scanner.nextLine();
                         break;
-
                     }
 
                     String aliasJugador;
                     do {
                         aliasJugador = ingresarString(scanner, "Ingrese alias del primer jugador:");
-                        if (sistema.buscarJugador(aliasJugador) == null) {
+                        if (sistema.buscarJugador(aliasJugador) == null)
                             System.out.println("No existe un jugador con ese alias, intente de nuevo");
-                        }
                     } while (sistema.buscarJugador(aliasJugador) == null);
 
                     Jugador j1 = sistema.buscarJugador(aliasJugador);
-
                     do {
                         aliasJugador = ingresarString(scanner, "Ingrese alias del segundo jugador:");
-                        if (sistema.buscarJugador(aliasJugador) == null) {
+                        if (sistema.buscarJugador(aliasJugador) == null)
                             System.out.println("No existe un jugador con ese alias, intente de nuevo");
-                        }
-                        if(aliasJugador.equals(j1.getAlias())){
+                        if(aliasJugador.equals(j1.getAlias()))
                             System.out.println("El segundo jugador no puede ser igual al primero");
-                        }
                     } while ((sistema.buscarJugador(aliasJugador) == null)||(aliasJugador.equals(j1.getAlias())));
 
                     Jugador j2 = sistema.buscarJugador(aliasJugador);
 
-                        System.out.println("Seleccione la forma de terminar la partida:");
-                        System.out.println("1 - Alcanzar una cantidad maxima de movimientos");
-                        System.out.println("2 - Alcanzar con UNA ficha el lado opuesto del tablero");
-                        System.out.println("3 - Alcanzar con TODAS las fichas el lado opuesto del tablero");
+                    System.out.println("Seleccione la forma de terminar la partida:");
+                    System.out.println("1 - Alcanzar una cantidad maxima de movimientos");
+                    System.out.println("2 - Alcanzar con UNA ficha el lado opuesto del tablero");
+                    System.out.println("3 - Alcanzar con TODAS las fichas el lado opuesto del tablero");
 
-                        int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
+                    int opcion = ingresarEnteroEnRango(scanner,1,3,"Eleccion: ");
 
-
-                   //int opcion = 1;
                     Date fecha = GregorianCalendar.getInstance().getTime();
                     sistema.jugar(j1, j2, opcion,fecha);
-
-
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
 
                     break;
                 case "3":
                     sistema.replicar();
-
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "4":
                     sistema.ranking();
-
-                    System.out.println("Presione enter para volver al menu principal...");
-                    scanner.nextLine();
                     break;
                 case "0":
                     salir=true;
-                    System.out.println("------------------------------\n");
-                    System.out.println("  El programa ha finalizado");
 
+                    System.out.println("------------------------------\n");
+                    System.out.println("El programa ha finalizado");
                     break;
                 default:
                     System.out.println("Ingrese una opción válida");
+            }
+
+            if(!salir){
+                System.out.println("Presione enter para volver al menu principal...");
+                scanner.nextLine();
             }
         }
     }

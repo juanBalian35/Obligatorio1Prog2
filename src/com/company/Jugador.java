@@ -1,5 +1,11 @@
 package com.company;
 
+/*
+ * Creado por:
+ *   Juan Balian - 211150
+ *   Agustín Introini - 211064
+ * */
+
 public class Jugador implements Comparable<Jugador> {
     public static final int NUM_FICHAS = 8;
 

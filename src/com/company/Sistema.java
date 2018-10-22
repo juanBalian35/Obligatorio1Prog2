@@ -1,14 +1,17 @@
 package com.company;
+
 import java.util.*;
 
+/*
+ * Creado por:
+ *   Juan Balian - 211150
+ *   Agustín Introini - 211064
+ * */
+
 public class Sistema {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     private static ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private ArrayList<Partida> partidas = new ArrayList<>();
-    //Jugador j1 = new Jugador("baba","1",15);
-    //Jugador j2 = new Jugador("asd","2",15);
-    //Partida partida1 = new Partida(j1, j2, 1, GregorianCalendar.getInstance().getTime());
-    //Partida partida2 = new Partida(j1, j2, 2, GregorianCalendar.getInstance().getTime());
 
     public ArrayList<Partida> getPartidas() {
         return partidas;
@@ -20,7 +23,6 @@ public class Sistema {
     public static ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
-
 
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
@@ -38,13 +40,13 @@ public class Sistema {
     public void replicar(){
         Collections.sort(partidas);
         if(partidas.isEmpty()){
-            System.out.println("\n Aún no se han jugado partidas\n");
+            System.out.println("\nAún no se han jugado partidas\n");
             return;
         }
 
-        for (int i = 0; i < getPartidas().size(); i++) {
+        for (int i = 0; i < getPartidas().size(); i++)
             System.out.println((i + 1) + ") " + partidas.get(i));
-        }
+
         int opcion = Prueba.ingresarEnteroEnRango(scanner, 1, partidas.size(), ("Seleccione la partida que desea replicar (1-" + (partidas.size()) + ")"));
         Partida partidaReplicar = partidas.get(opcion - 1);
         Tablero tablero = new Tablero();
@@ -78,8 +80,8 @@ public class Sistema {
             if (mov.charAt(4) == '1') {
                 Partida.hacerMovimiento(mov, partidaReplicar.getJugador1(), true);
                 alias = Ficha.ROJO + partidaReplicar.getJugador1().getAlias() + Ficha.RESET;
-
-            } else {
+            }
+            else {
                 Partida.hacerMovimiento(mov, partidaReplicar.getJugador2(), false);
                 alias = Ficha.AZUL + partidaReplicar.getJugador2().getAlias() + Ficha.RESET;
             }
@@ -97,32 +99,19 @@ public class Sistema {
     }
 
     public void ranking() {
-        System.out.println("");
-        System.out.println("+---------------------------------------------+");
+        System.out.println("\n+---------------------------------------------+");
         System.out.println("|RANKING DE JUGADORES CON MAS PARTIDAS GANADAS|");
-        System.out.println("+---------------------------------------------+");
-        System.out.println("");
+        System.out.println("+---------------------------------------------+\n");
         Collections.sort(jugadores);
 
         if (jugadores.isEmpty()) {
             System.out.println("Aún no se han registrado jugadores\n");
-        } else {
+        }
+        else {
+            for (int i = 0; i < jugadores.size(); i++)
+                System.out.println((i+1) + ") " + jugadores.get(i).toString());
 
-
-            Jugador jugadorAnterior = jugadores.get(0);
-
-            int posicion = 1;
-            for (int i = 0; i < jugadores.size(); i++) {
-                if (jugadorAnterior.getpGanadas() == jugadores.get(i).getpGanadas())
-                    System.out.println((posicion) + ") " + jugadores.get(i).toString());
-                else {
-                    posicion = i + 1;
-                    System.out.println(posicion + ") " + jugadores.get(i).toString());
-                }
-
-                jugadorAnterior = jugadores.get(i);
-            }
-            System.out.println("");
+            System.out.println();
         }
     }
 
